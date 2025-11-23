@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif 
+}
+
+/* HEADER & NAVIGATION*/
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;            
+}
+
+/* 3. STYLING THE LIST */
+nav ul {
+    list-style: none; 
+    display: flex;    
+    gap: 20px;       
+}
+
+/* 4. STYLING THE LINKS */
+nav a {
+    color: white;           
+    text-decoration: none;  
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff9900; 
+}
+/* 5. HERO SECTION */
+.hero {
+    height: 80vh; 
+    background-color: #f4f4f4; 
+    
+    /* FLEXBOX CENTERING MAGIC */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;   
+    text-align: center;     
+
+.hero h1 {
+    font-size: 3rem; 
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* 6. BUTTON STYLING */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: #ff9900;
+}
+}
+
+/* 7. ABOUT SECTION */
+.about {
+    padding: 4rem 2rem; /* 4rem Top/Bottom, 2rem Left/Right */
+    text-align: center;
+    background-color: white;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px; /* Limits width so lines aren't too long to read */
+    margin: 0 auto;   /* Centers the paragraph block itself */
+    line-height: 1.6; /* Adds space between lines of text for readability */
+}
+
+/* 8. FOOTER */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto; /* Good habit: helps push footer down */
+}
+
+/* 9. DARK MODE STYLES (UPDATED) */
+
+/* Base Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* FIX 1: Update the Hero Section background */
+.dark-mode .hero {
+    background-color: #121212; /* Changes grey to dark */
+}
+
+/* FIX 2: Update Hero Text Colors */
+.dark-mode .hero h1 {
+    color: #ffffff; /* Changes title from dark grey to white */
+}
+
+.dark-mode .hero p {
+    color: #cccccc; /* Changes subtitle to light grey */
+}
+
+/* Existing About Section overrides */
+.dark-mode .about {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .about p {
+    color: #cccccc;
+}
+
+.dark-mode a {
+    color: #ffffff; 
+}
+/* 10. MOBILE RESPONSIVENESS */
+
+/* This rule only activates if the screen is narrower than 768px (like a tablet or phone) */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the Navbar vertically */
+    nav {
+        flex-direction: column; /* Logo on top, links on bottom */
+        gap: 1rem;
+    }
+
+    /* 2. Make the Hero text smaller so it fits */
+    .hero h1 {
+        font-size: 2rem; /* Shrink from 3rem to 2rem */
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* 3. Add more breathing room to the About section */
+    .about {
+        padding: 2rem 1rem;
+    }
+}
