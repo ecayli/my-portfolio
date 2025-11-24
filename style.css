@@ -42,175 +42,133 @@ nav ul { list-style: none; display: flex; gap: 30px; }
 nav a { color: #FFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: opacity 0.3s; }
 nav a:hover { opacity: 0.7; }
 
-
+/*4. HERO SECTION */
 .hero {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /*padding-top: 80px;*/
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding-top: 80px;
 }
-
-.hero h1 { font-size: 40px; font-weight: 500; text-shadow: 0 4px 4px rgba(0, 0, 0, 0.60); margin-bottom: 10px; }
+.hero h1 { font-size: 40px; font-weight: 500; text-shadow: 0 4px 4px rgba(0,0,0,0.6); margin-bottom: 10px; }
 .hero p { font-size: 32px; font-weight: 400; margin-bottom: 40px; }
-
 .hero button {
     width: 235px; height: 63px;
-    border-radius: 100px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px; background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
     color: #FFF; font-size: 24px; font-weight: 600;
     cursor: pointer; transition: all 0.3s;
 }
-.hero button:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
+.hero button:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
 
-/* 5. SECTIONS */
-.about, .projects-section, .contact-section {
-    padding: 6rem 2rem;
-    text-align: center;
+/* 5. ABOUT SECTION (KLASÖR SİSTEMİ) */
+.about-section { padding: 6rem 2rem; text-align: center; position: relative; }
+.about-section h2 { font-size: 40px; margin-bottom: 40px; text-shadow: 0 4px 4px rgba(0,0,0,0.7); }
+
+.folder-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 50px;
 }
 
-h2 {
-    font-size: 40px;
-    font-weight: 500;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.70);
-    margin-bottom: 40px;
+.folder-item {
+    cursor: pointer; transition: transform 0.2s;
+    width: 150px;
+}
+.folder-item:hover { transform: scale(1.1); }
+
+.folder-icon { font-size: 80px; text-shadow: 0 4px 4px rgba(0,0,0,0.25); }
+.folder-name { font-size: 18px; font-weight: 500; margin-top: 10px; }
+
+/* AÇILIR PENCERE (POPUP WINDOW) */
+.glass-window {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%; max-width: 900px; height: 500px;
+    background: rgba(40, 40, 50, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    z-index: 2000;
+    opacity: 0; pointer-events: none; /* Gizli */
+    transition: all 0.3s ease;
+    display: flex; flex-direction: column;
 }
 
-.about p { font-size: 32px; font-weight: 400; max-width: 800px; margin: 0 auto; line-height: 1.4; }
+/* Pencere Görünür Olduğunda */
+.glass-window.open { opacity: 1; pointer-events: all; transform: translate(-50%, -50%) scale(1); }
 
-/* projects */
+.window-header {
+    height: 50px; background: rgba(255,255,255,0.05);
+    display: flex; align-items: center; padding: 0 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.window-controls { display: flex; gap: 8px; }
+.close-btn {
+    width: 15px; height: 15px; border-radius: 50%;
+    background: #FF5F57; border: none; cursor: pointer; color: transparent;
+}
+.close-btn:hover { color: rgba(0,0,0,0.5); font-size: 10px; line-height: 15px; }
+
+.window-title { margin: 0 auto; font-weight: 600; opacity: 0.8; }
+
+.window-content { padding: 40px; text-align: left; font-size: 20px; line-height: 1.6; overflow-y: auto; }
+.window-content h3 { color: #ff9900; margin-bottom: 10px; }
+.window-content p { margin-bottom: 20px; opacity: 0.9; }
+
+/* 6. PROJECTS SECTION */
+.projects-section { padding: 6rem 2rem; text-align: center; }
+.projects-section h2 { font-size: 40px; margin-bottom: 40px; text-shadow: 0 4px 4px rgba(0,0,0,0.7); }
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px; max-width: 1400px; margin: 0 auto;
 }
 
 .project-card {
-    border-radius: 60px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.25) inset;
-    padding: 40px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
+    border-radius: 60px; background: rgba(255,255,255,0.05);
+    box-shadow: 0 4px 4px 0 rgba(255,255,255,0.25) inset;
+    padding: 40px; text-align: left;
+    display: flex; flex-direction: column; align-items: flex-start;
 }
-
-.project-card h3 { font-size: 32px; font-weight: 600; text-shadow: 0 4px 4px rgba(0, 0, 0, 0.65); }
-.project-card p { font-size: 24px; line-height: 1.4; }
-.tech-stack { font-size: 24px; opacity: 0.8; margin-top: auto; }
+.project-card h3 { font-size: 32px; font-weight: 600; margin-bottom: 10px; }
+.project-card p { font-size: 24px; margin-bottom: 20px; opacity: 0.8; }
+.tech-stack { font-size: 20px; opacity: 0.7; margin-top: auto; }
 
 .btn-small {
     display: flex; justify-content: center; align-items: center;
-    width: 235px; height: 63px;
-    border-radius: 100px;
-    background: rgba(255, 255, 255, 0.25);
-    color: #FFF; text-decoration: none;
-    font-size: 24px; font-weight: 600;
-    margin-top: 20px; transition: transform 0.3s;
+    width: 235px; height: 63px; margin-top: 30px;
+    border-radius: 100px; background: rgba(255,255,255,0.25);
+    color: #FFF; text-decoration: none; font-size: 24px; font-weight: 600;
+    transition: transform 0.3s;
 }
-.btn-small:hover { transform: scale(1.05); background: rgba(255, 255, 255, 0.4); }
+.btn-small:hover { transform: scale(1.05); background: rgba(255,255,255,0.4); }
 
-/* 7. CONTACT SECTION (NEW) */
-.contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* 7. CONTACT SECTION */
+.contact-section { padding: 6rem 2rem; text-align: center; }
+.contact-section h2 { font-size: 40px; margin-bottom: 40px; }
+form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+input, textarea {
+    width: 100%; padding: 20px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.05); color: white; font-size: 18px; outline: none;
 }
-
-.input-group input, .input-group textarea {
-    width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.05); /* Glass Input */
-    color: white;
-    font-size: 18px;
-    outline: none;
-    transition: background 0.3s;
-}
-
-.input-group input::placeholder, .input-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.input-group input:focus, .input-group textarea:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: white;
-}
-
 .submit-btn {
-    width: 100%;
-    padding: 20px;
-    border-radius: 100px;
-    background: #FFF; /* White button for contrast */
-    color: #26263A;
-    font-size: 20px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s;
+    padding: 20px; border-radius: 100px; background: #FFF; color: #26263A;
+    font-size: 20px; font-weight: 600; border: none; cursor: pointer; transition: transform 0.2s;
 }
-
 .submit-btn:hover { transform: scale(1.02); }
 
 /* 8. FOOTER */
-footer {
-    padding: 4rem 2rem;
-    text-align: center;
-    background: rgba(0,0,0,0.2);
-}
+footer { padding: 4rem 2rem; text-align: center; background: rgba(0,0,0,0.2); }
+.social-links a { color: white; margin: 0 15px; font-size: 18px; text-decoration: none; opacity: 0.8; }
 
-.social-links {
-    margin-bottom: 20px;
-}
+/* ANİMASYON SINIFLARI */
+.hidden { opacity: 0; transform: translateY(50px); filter: blur(5px); transition: all 1s ease-out; }
+.show { opacity: 1; transform: translateY(0); filter: blur(0); }
 
-.social-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 15px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-.social-links a:hover { opacity: 1; text-decoration: underline; }
-
-/* MOBILE */
+/* MOBİL AYARLARI */
 @media (max-width: 768px) {
     .projects-grid { grid-template-columns: 1fr; }
     nav ul { display: none; }
-    .hero h1 { font-size: 32px; }
-    .hero p { font-size: 20px; }
-}
-
-/* starting point (cannot be seen)*/
-.hidden{
-    opacity: 0;
-    transform: translateY(50px);
-    filter: blur(5px);
-    transition: all 1s ease-out;
-}
-
-/* finishing point (can be seen) */
-.show{
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-}
-
-/* implementation for project cards*/
-.project-card:nth-child(2){
-    transition-delay: 0.2;
-}
-.project-card:nth-child(3){
-    transition-delay: 0.4;
+    .hero h1, .about-section h2 { font-size: 32px; }
+    .folder-grid { gap: 30px; }
 }

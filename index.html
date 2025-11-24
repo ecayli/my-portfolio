@@ -32,9 +32,42 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-        <h2>about me</h2>
-        <p>i am learning frontend development. this is my first project building a responsive website from scratch</p>
+  <section id="about" class="about-section">
+        <h2>about Me</h2>
+        
+        <!-- Klasörler -->
+        <div class="folder-grid">
+            <!-- Eğitim Klasörü -->
+            <div class="folder-item" onclick="openWindow('education')">
+                <div class="folder-icon">📁</div>
+                <div class="folder-name">Education</div>
+            </div>
+
+            <!-- Deneyim Klasörü -->
+            <div class="folder-item" onclick="openWindow('experience')">
+                <div class="folder-icon">📁</div>
+                <div class="folder-name">Experience</div>
+            </div>
+
+            <!-- Yetenekler Klasörü -->
+            <div class="folder-item" onclick="openWindow('skills')">
+                <div class="folder-icon">📁</div>
+                <div class="folder-name">Skills</div>
+            </div>
+        </div>
+
+        <!-- Açılır Pencere (Başlangıçta Gizli) -->
+        <div id="modal-window" class="glass-window">
+            <div class="window-header">
+                <div class="window-controls">
+                    <!-- Kapatma Butonu -->
+                    <button class="close-btn" onclick="closeWindow()">✕</button>
+                </div>
+                <span class="window-title" id="window-title">Folder</span>
+            </div>
+            <div class="window-content" id="window-content">
+            </div>
+        </div>
     </section>
 
     <!-- PROJECTS SECTION -->
