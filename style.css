@@ -42,7 +42,7 @@ nav ul { list-style: none; display: flex; gap: 30px; }
 nav a { color: #FFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: opacity 0.3s; }
 nav a:hover { opacity: 0.7; }
 
-/*4. HERO SECTION */
+
 .hero {
     min-height: 100vh;
     display: flex; flex-direction: column;
@@ -60,7 +60,7 @@ nav a:hover { opacity: 0.7; }
 }
 .hero button:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
 
-/* 5. ABOUT SECTION (KLASÖR SİSTEMİ) */
+/* about me part with file displays */
 .about-section { padding: 6rem 2rem; text-align: center; position: relative; }
 .about-section h2 { font-size: 40px; margin-bottom: 40px; text-shadow: 0 4px 4px rgba(0,0,0,0.7); }
 
@@ -77,7 +77,7 @@ nav a:hover { opacity: 0.7; }
 .folder-icon { font-size: 80px; text-shadow: 0 4px 4px rgba(0,0,0,0.25); }
 .folder-name { font-size: 18px; font-weight: 500; margin-top: 10px; }
 
-/* AÇILIR PENCERE (POPUP WINDOW) */
+/* pop-up window */
 .glass-window {
     position: fixed; top: 50%; left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
@@ -93,7 +93,6 @@ nav a:hover { opacity: 0.7; }
     display: flex; flex-direction: column;
 }
 
-/* Pencere Görünür Olduğunda */
 .glass-window.open { opacity: 1; pointer-events: all; transform: translate(-50%, -50%) scale(1); }
 
 .window-header {
@@ -114,7 +113,7 @@ nav a:hover { opacity: 0.7; }
 .window-content h3 { color: #ff9900; margin-bottom: 10px; }
 .window-content p { margin-bottom: 20px; opacity: 0.9; }
 
-/* 6. PROJECTS SECTION */
+/* my projects section */
 .projects-section { padding: 6rem 2rem; text-align: center; }
 .projects-section h2 { font-size: 40px; margin-bottom: 40px; text-shadow: 0 4px 4px rgba(0,0,0,0.7); }
 
@@ -142,7 +141,7 @@ nav a:hover { opacity: 0.7; }
 }
 .btn-small:hover { transform: scale(1.05); background: rgba(255,255,255,0.4); }
 
-/* 7. CONTACT SECTION */
+/* contact section */
 .contact-section { padding: 6rem 2rem; text-align: center; }
 .contact-section h2 { font-size: 40px; margin-bottom: 40px; }
 form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
@@ -157,15 +156,15 @@ input, textarea {
 }
 .submit-btn:hover { transform: scale(1.02); }
 
-/* 8. FOOTER */
+
 footer { padding: 4rem 2rem; text-align: center; background: rgba(0,0,0,0.2); }
 .social-links a { color: white; margin: 0 15px; font-size: 18px; text-decoration: none; opacity: 0.8; }
 
-/* ANİMASYON SINIFLARI */
+
 .hidden { opacity: 0; transform: translateY(50px); filter: blur(5px); transition: all 1s ease-out; }
 .show { opacity: 1; transform: translateY(0); filter: blur(0); }
 
-/* MOBİL AYARLARI */
+
 @media (max-width: 768px) {
     .projects-grid { grid-template-columns: 1fr; }
     nav ul { display: none; }

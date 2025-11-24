@@ -24,43 +24,41 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section id="home" class="hero">
         <h1>hello I’m a web developer</h1>
         <p>i build things for the web</p>
         <button onclick="document.getElementById('projects').scrollIntoView()">view my work</button>
     </section>
 
-    <!-- ABOUT SECTION -->
   <section id="about" class="about-section">
         <h2>about Me</h2>
         
-        <!-- Klasörler -->
+
         <div class="folder-grid">
-            <!-- Eğitim Klasörü -->
+
             <div class="folder-item" onclick="openWindow('education')">
                 <div class="folder-icon">📁</div>
                 <div class="folder-name">Education</div>
             </div>
 
-            <!-- Deneyim Klasörü -->
+
             <div class="folder-item" onclick="openWindow('experience')">
                 <div class="folder-icon">📁</div>
                 <div class="folder-name">Experience</div>
             </div>
 
-            <!-- Yetenekler Klasörü -->
+
             <div class="folder-item" onclick="openWindow('skills')">
                 <div class="folder-icon">📁</div>
                 <div class="folder-name">Skills</div>
             </div>
         </div>
 
-        <!-- Açılır Pencere (Başlangıçta Gizli) -->
+
         <div id="modal-window" class="glass-window">
             <div class="window-header">
                 <div class="window-controls">
-                    <!-- Kapatma Butonu -->
+
                     <button class="close-btn" onclick="closeWindow()">✕</button>
                 </div>
                 <span class="window-title" id="window-title">Folder</span>
@@ -70,17 +68,16 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+
     <section id="projects" class="projects-section">
         <h2>my projects</h2>
         <div class="projects-grid" id="project-container"></div>
     </section>
 
-    <!-- CONTACT SECTION (NEW!) -->
+
     <section id="contact" class="contact-section">
         <h2>get in touch!</h2>
-        
-        <!-- The Glass Form -->
+
         <form id="contact-form">
             <div class="input-group">
                 <input type="text" placeholder="your Name" required>
@@ -95,10 +92,10 @@
         </form>
     </section>
 
-    <!-- FOOTER -->
+
     <footer>
         <div class="social-links">
-            <!-- Simple text links for now, you can replace with icons later -->
+            <!-- Simple text links for now -->
             <a href="#">GitHub</a>
             <a href="#">LinkedIn</a>
             <a href="#">Twitter</a>

@@ -62,7 +62,7 @@ const modal = document.getElementById('modal-window');
 const modalTitle = document.getElementById('window-title');
 const modalContent = document.getElementById('window-content');
 
-// Klasörlerin İçerikleri
+// Files
 const folderData = {
     'education': {
         title: "education 🎓",
@@ -91,7 +91,7 @@ const folderData = {
     }
 };
 
-// Pencereyi Aç
+// Window
 function openWindow(key) {
     if(folderData[key]) {
         modalTitle.innerText = folderData[key].title;
@@ -100,12 +100,10 @@ function openWindow(key) {
     }
 }
 
-// Pencereyi Kapat
 function closeWindow() {
     modal.classList.remove('open');
 }
 
-// Boşluğa tıklayınca kapat
 window.onclick = function(e) {
     if (e.target == modal) closeWindow();
 }
