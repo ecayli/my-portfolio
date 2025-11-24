@@ -1,4 +1,4 @@
-/* 1. GENEL AYARLAR */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +6,18 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* 2. ARKA PLAN */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling when clicking links */
+}
+
+/* background */
 body {
     background: linear-gradient(180deg, #26263A 0%, #BBBFCF 100%);
     min-height: 100vh;
     color: #FFF;
 }
 
-/* 3. HEADER */
+/* header */
 header {
     position: fixed;
     top: 0;
@@ -35,10 +39,11 @@ nav {
 
 nav h2 { font-size: 24px; font-weight: 600; }
 nav ul { list-style: none; display: flex; gap: 30px; }
-nav a { color: #FFF; text-decoration: none; font-size: 16px; font-weight: 600; }
+nav a { color: #FFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: opacity 0.3s; }
+nav a:hover { opacity: 0.7; }
 #theme-toggle { background: none; border: none; font-size: 24px; cursor: pointer; }
 
-/* 4. HERO */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -62,106 +67,128 @@ nav a { color: #FFF; text-decoration: none; font-size: 16px; font-weight: 600; }
 }
 .hero button:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
 
-/* 5. ABOUT */
-.about { padding: 4rem 2rem; text-align: center; }
-.about h2 { font-size: 40px; font-weight: 500; text-shadow: 0 4px 4px rgba(0, 0, 0, 0.60); margin-bottom: 20px; }
-.about p { font-size: 32px; font-weight: 400; max-width: 800px; margin: 0 auto; line-height: 1.4; }
-
-/* 6. PROJELER (GÜNCELLENDİ - FIGMA DEĞERLERİ) */
-.projects-section {
-    padding: 4rem 2rem;
+/* 5. SECTIONS */
+.about, .projects-section, .contact-section {
+    padding: 6rem 2rem;
     text-align: center;
 }
 
-.projects-section h2 {
+h2 {
     font-size: 40px;
     font-weight: 500;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.70);
     margin-bottom: 40px;
 }
 
+.about p { font-size: 32px; font-weight: 400; max-width: 800px; margin: 0 auto; line-height: 1.4; }
+
+/* projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Kartlar geniş olsun diye 350 yerine 450px yaptım */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .project-card {
-    /* Figma: Inset Shadow Glass */
     border-radius: 60px;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.25) inset;
-    
     padding: 40px;
     text-align: left;
-    
-    /* İçeriği hizalama */
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Elemanlar arası boşluk */
-    align-items: flex-start; /* Sola yasla */
+    gap: 20px;
+    align-items: flex-start;
 }
 
-/* Başlık (Personal Portfolio) */
-.project-card h3 {
-    font-size: 32px;
-    font-weight: 600;
-    color: #FFF;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.65);
-}
+.project-card h3 { font-size: 32px; font-weight: 600; text-shadow: 0 4px 4px rgba(0, 0, 0, 0.65); }
+.project-card p { font-size: 24px; line-height: 1.4; }
+.tech-stack { font-size: 24px; opacity: 0.8; margin-top: auto; }
 
-/* Açıklama (A responsive portfolio...) */
-.project-card p {
-    font-size: 24px;
-    font-weight: 400;
-    color: #FFF;
-    line-height: 1.4;
-}
-
-/* Teknoloji (HTML • CSS • JavaScript) */
-.tech-stack {
-    font-size: 24px;
-    font-weight: 400;
-    color: #FFF;
-    opacity: 0.9;
-    margin-top: auto; /* En alta itmek için (opsiyonel) */
-}
-
-/* Buton (View Project) */
 .btn-small {
-    /* Figma: 235px genişlik, 63px yükseklik */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 235px;
-    height: 63px;
-    
-    /* Figma: Radius 100px, BG %25 white */
+    display: flex; justify-content: center; align-items: center;
+    width: 235px; height: 63px;
     border-radius: 100px;
     background: rgba(255, 255, 255, 0.25);
-    
-    /* Yazı Stili */
-    color: #FFF;
-    text-decoration: none;
-    font-family: 'Inter';
-    font-size: 24px;
+    color: #FFF; text-decoration: none;
+    font-size: 24px; font-weight: 600;
+    margin-top: 20px; transition: transform 0.3s;
+}
+.btn-small:hover { transform: scale(1.05); background: rgba(255, 255, 255, 0.4); }
+
+/* 7. CONTACT SECTION (NEW) */
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05); /* Glass Input */
+    color: white;
+    font-size: 18px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.input-group input::placeholder, .input-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 20px;
+    border-radius: 100px;
+    background: #FFF; /* White button for contrast */
+    color: #26263A;
+    font-size: 20px;
     font-weight: 600;
-    
-    margin-top: 20px;
-    transition: transform 0.3s;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.btn-small:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05);
+.submit-btn:hover { transform: scale(1.02); }
+
+/* 8. FOOTER */
+footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
 }
 
-/* MOBİL İÇİN KÜÇÜLTME */
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover { opacity: 1; text-decoration: underline; }
+
+/* MOBILE */
 @media (max-width: 768px) {
     .projects-grid { grid-template-columns: 1fr; }
-    .project-card h3 { font-size: 28px; }
-    .project-card p, .tech-stack, .btn-small { font-size: 18px; }
-    .btn-small { width: 100%; } /* Mobilde tam genişlik */
+    nav ul { display: none; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 20px; }
 }

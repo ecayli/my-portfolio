@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     
-    <!-- 1. Figma'daki "INTER" Fontunu Yüklüyoruz -->
+    <!-- 1. Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,10 +18,10 @@
         <nav>
             <h2>MyName</h2>
             <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><button id="theme-toggle">🌙</button></li>
             </ul>
         </nav>
@@ -29,25 +29,50 @@
 
     <!-- HERO SECTION -->
     <section id="home" class="hero">
-        <h1>hello I’m a web developer</h1>
+        <h1>Hello I’m a web developer</h1>
         <p>i build things for the web</p>
-        <button>view my work</button>
+        <button onclick="document.getElementById('projects').scrollIntoView()">view my work</button>
     </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
-        <h2>about me</h2>
+        <h2>About me</h2>
         <p>i am learning frontend development. this is my first project building a responsive website from scratch</p>
     </section>
 
     <!-- PROJECTS SECTION -->
     <section id="projects" class="projects-section">
-        <h2>my projects</h2>
-        <!-- Kartlar JavaScript ile buraya gelecek -->
+        <h2>My projects</h2>
         <div class="projects-grid" id="project-container"></div>
     </section>
 
+    <!-- CONTACT SECTION (NEW!) -->
+    <section id="contact" class="contact-section">
+        <h2>Get in touch</h2>
+        
+        <!-- The Glass Form -->
+        <form id="contact-form">
+            <div class="input-group">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="input-group">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
+        <div class="social-links">
+            <!-- Simple text links for now, you can replace with icons later -->
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
         <p>&copy; 2025 MyName. All rights reserved.</p>
     </footer>
 
