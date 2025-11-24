@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    
+    <!-- 1. Figma'daki "INTER" Fontunu Yüklüyoruz -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,28 +18,32 @@
         <nav>
             <h2>MyName</h2>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li> <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
                 <li><button id="theme-toggle">🌙</button></li>
             </ul>
         </nav>
     </header>
 
+    <!-- HERO SECTION -->
     <section id="home" class="hero">
-        <h1>Hello, I'm a Web Developer.</h1>
-        <p>I build things for the web.</p>
-        <button>View My Work</button>
+        <h1>hello I’m a web developer</h1>
+        <p>i build things for the web</p>
+        <button>view my work</button>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>I am learning frontend development. This is my first project building a responsive website from scratch.</p>
+        <h2>about me</h2>
+        <p>i am learning frontend development. this is my first project building a responsive website from scratch</p>
     </section>
 
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="projects-section">
-        <h2>My Projects</h2>
-        
+        <h2>my projects</h2>
+        <!-- Kartlar JavaScript ile buraya gelecek -->
         <div class="projects-grid" id="project-container"></div>
     </section>
 

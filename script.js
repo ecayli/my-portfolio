@@ -1,62 +1,50 @@
-/* ==========================
-   PART 1: DARK MODE TOGGLE
-   ========================== */
 
-// 1. Select the button and the body
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 
-// 2. Add Event Listener to the button
 toggleButton.addEventListener('click', function() {
-    // Toggles the 'dark-mode' class on or off
     body.classList.toggle('dark-mode');
 });
-
 
 /* ==========================
    PART 2: DYNAMIC PROJECTS
    ========================== */
 
-// 1. The Data - An Array of Objects
 const projects = [
     {
-        title: "Personal Portfolio",
-        description: "A responsive portfolio website built with HTML, CSS, and JavaScript. Features a dark mode toggle.",
-        tech: ["HTML", "CSS", "JavaScript"],
+        title: "personal Portfolio",
+        description: "a responsive portfolio website built with HTML, CSS, and JavaScript. features a dark mode toggle and glassmorphism design.",
+        tech: ["html", "css", "javascript"],
         link: "#" 
     },
     {
-        title: "Weather App",
-        description: "An application that fetches weather data from an API and displays it to the user.",
-        tech: ["API", "Async/Await", "JSON"],
+        title: "weather dashboard",
+        description: "real-time weather application that fetches data from an external API. visualizes temperature and conditions dynamically.",
+        tech: ["api", "async/await", "json"],
         link: "#"
     },
     {
-        title: "To-Do List",
-        description: "An interactive task manager that saves data to local storage.",
-        tech: ["DOM Manipulation", "Events"],
+        title: "task manager app",
+        description: "an interactive to-do list application with local storage support. allows users to add, delete, and manage daily tasks.",
+        tech: ["dom", "events", "local storage"],
         link: "#"
     }
 ];
 
-// 2. Select the container where we want to put the projects
 const container = document.getElementById('project-container');
 
-// 3. The Loop - Generate HTML for each project
 projects.forEach(project => {
-    
-    // Create the HTML card structure using a "Template Literal"
+    // HTML yapısını senin yeni CSS'ine göre temizledik
     const cardHTML = `
         <div class="project-card">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <div class="tech-stack">
-                <small>${project.tech.join(' • ')}</small>
+                ${project.tech.join(' • ')}
             </div>
             <a href="${project.link}" class="btn-small">View Project</a>
         </div>
     `;
 
-    // Add this new card to the container
     container.innerHTML += cardHTML;
 });

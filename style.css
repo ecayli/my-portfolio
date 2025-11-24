@@ -1,257 +1,167 @@
-*{
+/* 1. GENEL AYARLAR */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif 
+    font-family: 'Inter', sans-serif;
 }
 
-/* HEADER & NAVIGATION*/
+/* 2. ARKA PLAN */
+body {
+    background: linear-gradient(180deg, #26263A 0%, #BBBFCF 100%);
+    min-height: 100vh;
+    color: #FFF;
+}
+
+/* 3. HEADER */
 header {
-    background-color: #333;
-    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.01);
+    backdrop-filter: blur(10px);
     padding: 1rem 2rem;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;            
-}
-
-/* 3. STYLING THE LIST */
-nav ul {
-    list-style: none; 
-    display: flex;    
-    gap: 20px;       
-}
-
-/* 4. STYLING THE LINKS */
-nav a {
-    color: white;           
-    text-decoration: none;  
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #ff9900; 
-}
-/* 5. HERO SECTION */
-.hero {
-    height: 80vh; 
-    background-color: #f4f4f4; 
-    
-    /* FLEXBOX CENTERING MAGIC */
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;   
-    text-align: center;     
-
-.hero h1 {
-    font-size: 3rem; 
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
-
-/* 6. BUTTON STYLING */
-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer; 
-    border-radius: 5px;
-    transition: background-color 0.3s ease; 
-}
-
-button:hover {
-    background-color: #ff9900;
-}
-}
-
-/* 7. ABOUT SECTION */
-.about {
-    padding: 4rem 2rem; /* 4rem Top/Bottom, 2rem Left/Right */
-    text-align: center;
-    background-color: white;
-}
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.about p {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 600px; /* Limits width so lines aren't too long to read */
-    margin: 0 auto;   /* Centers the paragraph block itself */
-    line-height: 1.6; /* Adds space between lines of text for readability */
-}
-
-/* 8. FOOTER */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: auto; /* Good habit: helps push footer down */
-}
-
-/* 9. DARK MODE STYLES (UPDATED) */
-
-/* Base Dark Mode */
-.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-/* FIX 1: Update the Hero Section background */
-.dark-mode .hero {
-    background-color: #121212; /* Changes grey to dark */
-}
-
-/* FIX 2: Update Hero Text Colors */
-.dark-mode .hero h1 {
-    color: #ffffff; /* Changes title from dark grey to white */
-}
-
-.dark-mode .hero p {
-    color: #cccccc; /* Changes subtitle to light grey */
-}
-
-/* Existing About Section overrides */
-.dark-mode .about {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-.dark-mode .about p {
-    color: #cccccc;
-}
-
-.dark-mode a {
-    color: #ffffff; 
-}
-/* 10. MOBILE RESPONSIVENESS */
-
-@media (max-width: 768px) {
-    
-
-    nav {
-        flex-direction: column; 
-        gap: 1rem;
-    }
-
-
-    .hero h1 {
-        font-size: 2rem; 
-    }
-    
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-
-    .about {
-        padding: 2rem 1rem;
-    }
-}
-/* 11. PROJECTS SECTION */
-.projects-section {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9; /* Light grey contrast */
-    text-align: center;
-}
-
-.projects-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-/* THE GRID */
-.projects-grid {
-    display: grid;
-    /* This creates columns that auto-fit to the screen size (Responsive magic!) */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* THE CARD */
+nav h2 { font-size: 24px; font-weight: 600; }
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav a { color: #FFF; text-decoration: none; font-size: 16px; font-weight: 600; }
+#theme-toggle { background: none; border: none; font-size: 24px; cursor: pointer; }
+
+/* 4. HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 { font-size: 40px; font-weight: 500; text-shadow: 0 4px 4px rgba(0, 0, 0, 0.60); margin-bottom: 10px; }
+.hero p { font-size: 32px; font-weight: 400; margin-bottom: 40px; }
+
+.hero button {
+    width: 235px; height: 63px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFF; font-size: 24px; font-weight: 600;
+    cursor: pointer; transition: all 0.3s;
+}
+.hero button:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
+
+/* 5. ABOUT */
+.about { padding: 4rem 2rem; text-align: center; }
+.about h2 { font-size: 40px; font-weight: 500; text-shadow: 0 4px 4px rgba(0, 0, 0, 0.60); margin-bottom: 20px; }
+.about p { font-size: 32px; font-weight: 400; max-width: 800px; margin: 0 auto; line-height: 1.4; }
+
+/* 6. PROJELER (GÜNCELLENDİ - FIGMA DEĞERLERİ) */
+.projects-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 40px;
+    font-weight: 500;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.70);
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Kartlar geniş olsun diye 350 yerine 450px yaptım */
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .project-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    /* Figma: Inset Shadow Glass */
+    border-radius: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.25) inset;
+    
+    padding: 40px;
     text-align: left;
-    transition: transform 0.3s ease;
+    
+    /* İçeriği hizalama */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Elemanlar arası boşluk */
+    align-items: flex-start; /* Sola yasla */
 }
 
-.project-card:hover {
-    transform: translateY(-5px); /* Moves up slightly on hover */
-}
-
+/* Başlık (Personal Portfolio) */
 .project-card h3 {
-    margin-bottom: 1rem;
-    color: #333;
+    font-size: 32px;
+    font-weight: 600;
+    color: #FFF;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.65);
 }
 
+/* Açıklama (A responsive portfolio...) */
 .project-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFF;
+    line-height: 1.4;
 }
 
+/* Teknoloji (HTML • CSS • JavaScript) */
 .tech-stack {
-    margin-bottom: 1.5rem;
-    color: #888;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFF;
+    opacity: 0.9;
+    margin-top: auto; /* En alta itmek için (opsiyonel) */
 }
 
-/* Small Button inside card */
+/* Buton (View Project) */
 .btn-small {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #333;
-    color: white;
+    /* Figma: 235px genişlik, 63px yükseklik */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 235px;
+    height: 63px;
+    
+    /* Figma: Radius 100px, BG %25 white */
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.25);
+    
+    /* Yazı Stili */
+    color: #FFF;
     text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 600;
+    
+    margin-top: 20px;
+    transition: transform 0.3s;
 }
 
 .btn-small:hover {
-    background-color: #ff9900;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
-/* DARK MODE ADJUSTMENTS FOR PROJECTS */
-.dark-mode .projects-section {
-    background-color: #1a1a1a;
-}
-
-.dark-mode .projects-section h2 {
-    color: white;
-}
-
-.dark-mode .project-card {
-    background-color: #2d2d2d;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-}
-
-.dark-mode .project-card h3 {
-    color: white;
-}
-
-.dark-mode .project-card p {
-    color: #cccccc;
+/* MOBİL İÇİN KÜÇÜLTME */
+@media (max-width: 768px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card h3 { font-size: 28px; }
+    .project-card p, .tech-stack, .btn-small { font-size: 18px; }
+    .btn-small { width: 100%; } /* Mobilde tam genişlik */
 }
