@@ -44,3 +44,23 @@ form.addEventListener('submit', function(e) {
     alert("Thank you for your message! I will get back to you soon.");
     form.reset(); // Clears the form
 });
+
+/* observer*/
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+        else{
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hero, .about, .projects-section h2, .contact-section, .project-card');
+hiddenElements.forEach((el) => {
+    el.classList.add('hidden');
+    observer.observe(el);
+});
