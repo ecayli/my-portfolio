@@ -67,11 +67,11 @@ const folderData = {
     'education': {
         title: "education 🎓",
         content: `
-            <h3>University (2021-2025)</h3>
-            <p>Computer Engineering Bachelor's Degree.<br>Focus on Software Architecture & Algorithms.</p>
+            <h3>Ludwig-Maximillians-Universität München (2022-)</h3>
+            <p>B.Sc. Medieninformatik<br></p>
             <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-            <h3>High School (2017-2021)</h3>
-            <p>Science & Mathematics Department.</p>`
+            <h3>Istanbuler Gymnasium-Istanbul Erkek Lisesi (2017-2022)</h3>
+            <p>Deutsche Auslandsschule – Abitur: 2.1 </p>`
     },
     'experience': {
         title: "experience 💼",
@@ -89,6 +89,7 @@ const folderData = {
             <p><strong>Tools:</strong> Git, GitHub, VS Code, Figma</p>
             <p><strong>Frameworks:</strong> React (Learning), Bootstrap</p>`
     }
+    
 };
 
 // Window
