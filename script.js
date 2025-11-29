@@ -8,9 +8,10 @@ const projects = [
         link: "#" 
     },
     {
-        title: "weather dashboard",
-        description: "real-time weather application that fetches data from an external API. visualizes temperature and conditions dynamically.",
-        tech: ["API", "Async/Await", "JSON"],
+
+        title: "synchrotrack",
+        description:"a neuro-adaptive focus app with minimal UI and dynamic gradients to reduce cognitive load and provide ambient visual feedback tailored to different mental states.",
+        tech: ["React", "Tailwind CSS", "JavaScript", "UX/UI Design"],
         link: "#"
     },
     {
