@@ -1,12 +1,15 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Elifnaz | UX & Media Informatics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +17,7 @@
 
     <header>
         <nav>
-            <h2>MyName</h2>
+            <h2>Elifnaz Çaylı</h2>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -25,50 +28,69 @@
     </header>
 
     <section id="home" class="hero">
-        <h1>hello I’m a web developer</h1>
-        <p>i build things for the web</p>
-        <button onclick="document.getElementById('projects').scrollIntoView()">view my work</button>
-    </section>
-
-  <section id="about" class="about-section">
-        <h2>about Me</h2>
-        
-
-        <div class="folder-grid">
-
-            <div class="folder-item" onclick="openWindow('education')">
-                <div class="folder-icon">📁</div>
-                <div class="folder-name">Education</div>
-            </div>
-
-
-            <div class="folder-item" onclick="openWindow('experience')">
-                <div class="folder-icon">📁</div>
-                <div class="folder-name">Experience</div>
-            </div>
-
-
-            <div class="folder-item" onclick="openWindow('skills')">
-                <div class="folder-icon">📁</div>
-                <div class="folder-name">Skills</div>
-            </div>
-        </div>
-
-
-        <div id="modal-window" class="glass-window">
-            <div class="window-header">
-                <div class="window-controls">
-
-                    <button class="close-btn" onclick="closeWindow()">✕</button>
-                </div>
-                <span class="window-title" id="window-title">Folder</span>
-            </div>
-            <div class="window-content" id="window-content">
-            </div>
+        <div class="hero-content">
+            <p class="eyebrow">UX & Media Informatics</p>
+            <h1>hello, i’m <span>Elifnaz</span></h1>
+            <p class="hero-subtitle">
+                I design interfaces and experiences that feel calm, focused, and human.
+                My work lives at the intersection of <span>UX design</span>, <span>interaction</span>, and <span>media informatics</span>,
+                with a special interest in systems that support focus and cognitive comfort.
+            </p>
+            <p class="hero-subtitle hero-subtitle-small">
+                Currently studying Media Informatics at LMU Munich and exploring how to make digital products 
+                not only functional but also cognitively effortless and visually engaging.
+            </p>
+            <button onclick="document.getElementById('projects').scrollIntoView()">view my work</button>
         </div>
     </section>
 
 
+    <!-- FEATURED PROJECT: SYNCHROTRACK -->
+    <section id="synchrotrack" class="featured-project">
+        <div class="featured-text">
+            <h2>SynchroTrack</h2>
+            <p class="featured-tagline">your dynamic sonic focus companion</p>
+            <p class="featured-description">
+                A concept focus app that adapts gentle soundscapes and gradients to your mental state.
+                This was my very first design iteration – a simple, linear flow from onboarding
+                to three different focus sessions: Calm, Medium, and High.
+            </p>
+            <ul class="featured-points">
+                <li>Minimal, distraction-free screens</li>
+                <li>Three intensity levels: Calm, Medium, High</li>
+                <li>Soft gradients and glassmorphism inspired by this portfolio</li>
+            </ul>
+        </div>
+        <div class="featured-mockups">
+            <img src="synchrotrack-mockup.png" alt="SynchroTrack first design mockups" class="mockup-image">
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION - Now using the grid for folders -->
+    <section id="about" class="about">
+        <h2>about me</h2>
+        <p class="mb-10 max-w-2xl mx-auto text-lg text-gray-300">
+            Get to know my background by browsing the folders below.
+        </p>
+        <div class="about-grid">
+            <div class="folder-icon" onclick="openWindow('education')">
+                <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                <span>Education</span>
+            </div>
+    
+            <div class="folder-icon" onclick="openWindow('experience')">
+                <span class="icon"><i class="fas fa-briefcase"></i></span>
+                <span>Experience</span>
+            </div>
+    
+            <div class="folder-icon" onclick="openWindow('skills')">
+                <span class="icon"><i class="fas fa-code"></i></span>
+                <span>Technical Skills</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="projects-section">
         <h2>my projects</h2>
         <div class="projects-grid" id="project-container"></div>
@@ -86,22 +108,32 @@
                 <input type="email" placeholder="your Email" required>
             </div>
             <div class="input-group">
-                <textarea placeholder="your Message" rows="5" required></textarea>
+                <textarea rows="4" placeholder="your Message" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
 
     <footer>
         <div class="social-links">
-            <!-- Simple text links for now -->
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Twitter</a>
+            <a href="https://github.com/ecayli" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/elifnazayl" target="_blank">LinkedIn</a>
+            <a href="https://gitlab.com/cayli" target="_blank">GitLab</a>
         </div>
-        <p>&copy; 2025 MyName. All rights reserved.</p>
+        <p>&copy; 2025 Elifnaz Çaylı. All rights reserved.</p>
     </footer>
+
+    <!-- Modal Window for folder content -->
+    <div id="window-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="modal-close" onclick="closeWindow()">&times;</span>
+            <h2 id="window-title">window</h2>
+            <div id="window-content" class="window-body">
+                <!-- dynamic content -->
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
