@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elifnaz | UX & Media Informatics</title>
+    <title>Elifnaz Çaylı | UX & Medieninformatik</title>
+    <!-- Inter font with multiple weights for flexible typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for icons -->
+    <!-- Icons for the folder UI and social links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
@@ -21,26 +22,26 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Say hi</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <p class="eyebrow">UX & Media Informatics</p>
-            <h1>hello, i’m <span>Elifnaz</span></h1>
+            <p class="eyebrow">Medieninformatik Student @ LMU</p>
+            <h1>hey, I'm <span>Elifnaz</span> 👋</h1>
             <p class="hero-subtitle">
-                I design interfaces and experiences that feel calm, focused, and human.
-                My work lives at the intersection of <span>UX design</span>, <span>interaction</span>, and <span>media informatics</span>,
-                with a special interest in systems that support focus and cognitive comfort.
+                I'm that person who actually enjoys making interfaces less annoying. 
+                Currently studying <span>Medieninformatik</span> at LMU Munich after switching from pure CS, 
+                focusing on <span>UX design</span> and <span>HCI</span> where code meets human needs.
             </p>
             <p class="hero-subtitle hero-subtitle-small">
-                Currently studying Media Informatics at LMU Munich and exploring how to make digital products 
-                not only functional but also cognitively effortless and visually engaging.
+                When I'm not prototyping in Figma or debugging Java, you'll find me at Model UN debates, 
+                contributing to Sapere Aude magazine, or helping Turkish students navigate Munich life.
             </p>
-            <button onclick="document.getElementById('projects').scrollIntoView()">view my work</button>
+            <button onclick="document.getElementById('projects').scrollIntoView()">see what I've built →</button>
         </div>
     </section>
 
@@ -49,28 +50,30 @@
     <section id="synchrotrack" class="featured-project">
         <div class="featured-text">
             <h2>SynchroTrack</h2>
-            <p class="featured-tagline">your dynamic sonic focus companion</p>
+            <p class="featured-tagline">my first real UX project (and yes, it shows)</p>
             <p class="featured-description">
-                A concept focus app that adapts gentle soundscapes and gradients to your mental state.
-                This was my very first design iteration – a simple, linear flow from onboarding
-                to three different focus sessions: Calm, Medium, and High.
+                Remember when every productivity app made you feel MORE stressed? 
+                I built SynchroTrack because I needed something that wouldn't judge me 
+                for needing a "calm focus" mode at 3pm. It's basically Spotify moods 
+                but for your brain.
             </p>
             <ul class="featured-points">
-                <li>Minimal, distraction-free screens</li>
-                <li>Three intensity levels: Calm, Medium, High</li>
-                <li>Soft gradients and glassmorphism inspired by this portfolio</li>
+                <li>Three modes because decision fatigue is real</li>
+                <li>No notifications, timers, or guilt trips</li>
+                <li>Gradients that don't hurt your eyes at 2am</li>
+                <li>My first time using Figma components (and it worked!)</li>
             </ul>
         </div>
         <div class="featured-mockups">
-            <img src="synchrotrack-mockup.png" alt="SynchroTrack first design mockups" class="mockup-image">
+            <img src="synchrotrack-mockup.png" alt="SynchroTrack app screens" class="mockup-image">
         </div>
     </section>
 
-    <!-- ABOUT SECTION - Now using the grid for folders -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="about">
-        <h2>about me</h2>
+        <h2>the quick rundown</h2>
         <p class="mb-10 max-w-2xl mx-auto text-lg text-gray-300">
-            Get to know my background by browsing the folders below.
+            Click around to learn more about my slightly chaotic academic journey.
         </p>
         <div class="about-grid">
             <div class="folder-icon" onclick="openWindow('education')">
@@ -85,32 +88,39 @@
     
             <div class="folder-icon" onclick="openWindow('skills')">
                 <span class="icon"><i class="fas fa-code"></i></span>
-                <span>Technical Skills</span>
+                <span>Skills & Tools</span>
+            </div>
+
+            <div class="folder-icon" onclick="openWindow('random')">
+                <span class="icon"><i class="fas fa-dice"></i></span>
+                <span>Random Facts</span>
             </div>
         </div>
     </section>
 
     <!-- PROJECTS SECTION -->
     <section id="projects" class="projects-section">
-        <h2>my projects</h2>
+        <h2>stuff I've made</h2>
+        <p class="projects-intro">From biotech labs to design prototypes – it's been a journey.</p>
         <div class="projects-grid" id="project-container"></div>
     </section>
 
 
     <section id="contact" class="contact-section">
-        <h2>get in touch!</h2>
+        <h2>let's chat!</h2>
+        <p class="contact-intro">Got a project idea? Want to discuss UX over Turkish tea? Just say hi!</p>
 
         <form id="contact-form">
             <div class="input-group">
-                <input type="text" placeholder="your Name" required>
+                <input type="text" placeholder="What should I call you?" required>
             </div>
             <div class="input-group">
-                <input type="email" placeholder="your Email" required>
+                <input type="email" placeholder="Your email (I promise no spam)" required>
             </div>
             <div class="input-group">
-                <textarea rows="4" placeholder="your Message" required></textarea>
+                <textarea rows="4" placeholder="Tell me what's on your mind..." required></textarea>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit">Send it my way →</button>
         </form>
     </section>
 
@@ -118,10 +128,11 @@
     <footer>
         <div class="social-links">
             <a href="https://github.com/ecayli" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/elifnazayl" target="_blank">LinkedIn</a>
+            <a href="https://linkedin.com/in/elifnazayli" target="_blank">LinkedIn</a>
             <a href="https://gitlab.com/cayli" target="_blank">GitLab</a>
+            <a href="mailto:elifnazcayli@gmail.com">Email</a>
         </div>
-        <p>&copy; 2025 Elifnaz Çaylı. All rights reserved.</p>
+        <p>Made with coffee and determination in Munich 🥨</p>
     </footer>
 
     <!-- Modal Window for folder content -->

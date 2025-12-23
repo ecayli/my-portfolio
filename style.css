@@ -1,4 +1,4 @@
-/* Global Styles Reset */
+/* Base styles - clean slate with consistent font */
 * {
     margin: 0;
     padding: 0;
@@ -6,23 +6,26 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* Smooth scrolling for a more polished feel */
 html {
-    scroll-behavior: smooth; /* Smooth scrolling when clicking links */
+    scroll-behavior: smooth;
 }
 
-/* --- COLOR PALETTE --- */
-/* Primary Dark: #26263A (Deep Indigo) */
-/* Secondary Light: #BBBFCF (Pale Blue/Gray) */
-/* Accent Cyan/Turquoise: #40E0D0 */
+/* --- COLOR PALETTE (carefully chosen for dark theme + readability) --- */
+/* Primary Dark: #26263A (Deep Indigo) - for backgrounds & depth */
+/* Secondary Light: #BBBFCF (Pale Blue/Gray) - for secondary text */
+/* Accent Cyan/Turquoise: #40E0D0 - for highlights & gradients */
+/* Warning/Secondary Accent: #FFC107 (Amber) - for gradient contrast */
 
-/* Background and Body */
+/* Dark mode gradient background - no harsh blacks, just deep purples & navy */
 body {
     background: radial-gradient(circle at top left, #42446B 0, #1A1A2E 35%, #111122 100%);
     color: #F5F5FF;
     min-height: 100vh;
 }
 
-/* Reusable utility classes used in the modal content */
+/* Reusable utility classes - inspired by Tailwind but hand-rolled to stay vanilla */
+/* Keeps the HTML clean and CSS maintainable */
 .text-white { color: #F5F5FF; }
 .text-gray-300 { color: #CBD2F0; }
 .text-gray-400 { color: #9BA3C7; }
@@ -30,18 +33,24 @@ body {
 .font-medium { font-weight: 500; }
 .text-xl { font-size: 1.25rem; }
 .text-md { font-size: 1rem; }
+.text-sm { font-size: 0.875rem; }
+.text-3xl { font-size: 1.875rem; }
 .block { display: block; }
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-3 { margin-bottom: 0.75rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 0.5rem; }
 .max-w-2xl { max-width: 42rem; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 .text-lg { font-size: 1.125rem; }
+/* Spacing utilities for list items and grid elements */
 .space-y-1 > :not(:last-child) { margin-bottom: 0.25rem; }
 .space-y-2 > :not(:last-child) { margin-bottom: 0.5rem; }
 .space-y-3 > :not(:last-child) { margin-bottom: 0.75rem; }
 .list-disc { list-style-type: disc; }
+.list-decimal { list-style-type: decimal; }
 .list-outside { list-style-position: outside; }
 .ml-5 { margin-left: 1.25rem; }
 .ml-6 { margin-left: 1.5rem; }
@@ -49,8 +58,12 @@ body {
 .mt-6 { margin-top: 1.5rem; }
 .mt-8 { margin-top: 2rem; }
 .text-center { text-align: center; }
+.italic { font-style: italic; }
+.mr-3 { margin-right: 0.75rem; }
+.items-start { align-items: flex-start; }
+.flex { display: flex; }
 
-/* Header */
+/* Header with glass effect - sticky so it's always accessible */
 header {
     padding: 20px 40px;
     display: flex;
@@ -75,7 +88,6 @@ nav h2 {
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: #F8FAFF;
 }
 
@@ -85,12 +97,12 @@ nav ul {
     gap: 30px;
 }
 
+/* Nav links with gradient underline hover effect - subtle but polished */
 nav ul li a {
     text-decoration: none;
     color: #E0E4FF;
     font-size: 0.9rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
     opacity: 0.8;
     position: relative;
     padding-bottom: 2px;
@@ -184,7 +196,7 @@ nav ul li a:hover::after {
 }
 
 .hero button:hover {
-    background: #FFD740; /* Lighter Amber for hover */
+    background: #FFD740;
     transform: translateY(-2px);
 }
 
@@ -206,10 +218,9 @@ nav ul li a:hover::after {
 }
 
 .featured-tagline {
-    text-transform: lowercase;
-    letter-spacing: 0.12em;
-    font-size: 12px;
-    font-weight: 600;
+    letter-spacing: 0.08em;
+    font-size: 14px;
+    font-weight: 500;
     color: #BBBFCF;
     margin-bottom: 18px;
 }
@@ -232,7 +243,7 @@ nav ul li a:hover::after {
 }
 
 .featured-points li::before {
-    content: "•";
+    content: "→";
     color: #40E0D0;
     margin-right: 8px;
 }
@@ -253,7 +264,6 @@ nav ul li a:hover::after {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Make featured section stack on small screens */
 @media (max-width: 900px) {
     .featured-project {
         grid-template-columns: 1fr;
@@ -342,13 +352,21 @@ nav ul li a:hover::after {
 .projects-section h2 {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+}
+
+.projects-intro {
+    font-size: 16px;
+    color: #CBD2F0;
+    margin-bottom: 40px;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* Project Card */
@@ -364,6 +382,11 @@ nav ul li a:hover::after {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-card h3 {
@@ -374,6 +397,7 @@ nav ul li a:hover::after {
 .project-card p {
     font-size: 0.9rem;
     color: #D0D4E8;
+    line-height: 1.6;
 }
 
 .tech-stack {
@@ -386,6 +410,7 @@ nav ul li a:hover::after {
     display: flex;
     gap: 10px; 
     flex-wrap: wrap; 
+    margin-top: auto;
 }
 
 /* Button style adjustments for small buttons */
@@ -409,17 +434,28 @@ nav ul li a:hover::after {
     transform: scale(1.02);
 }
 
-/* Specific style for the Case Study button to stand out */
+/* Disabled button state */
+.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: none;
+}
+
+/* Specific style for the Case Study button */
 .btn-case-study {
-    background: #FFC107; /* Highlight with Amber */
+    background: #FFC107;
     border-color: #FFC107;
     color: #1A1A2E;
     font-weight: 700;
 }
+
 .btn-case-study:hover {
     background: #FFD740;
 }
-
 
 /* Modal Window (Pop-up) */
 .modal {
@@ -434,7 +470,6 @@ nav ul li a:hover::after {
     background-color: rgba(2, 6, 23, 0.7); 
 }
 
-/* Show modal when open */
 .modal.open {
     display: block;
 }
@@ -448,6 +483,8 @@ nav ul li a:hover::after {
     color: white;
     border: 1px solid rgba(255,255,255,0.16);
     box-shadow: 0 30px 80px rgba(0,0,0,0.65);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .modal-close {
@@ -470,6 +507,19 @@ nav ul li a:hover::after {
     line-height: 1.7;
 }
 
+/* Case Study Content */
+.case-study-content {
+    line-height: 1.8;
+}
+
+.case-study-content h1 {
+    margin-bottom: 1rem;
+}
+
+.case-study-content h2 {
+    color: #40E0D0;
+}
+
 /* Contact Section */
 .contact-section {
     padding: 6rem 2rem;
@@ -478,6 +528,12 @@ nav ul li a:hover::after {
 
 .contact-section h2 {
     font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    font-size: 16px;
+    color: #CBD2F0;
     margin-bottom: 30px;
 }
 
@@ -499,6 +555,12 @@ nav ul li a:hover::after {
     background-color: rgba(13, 17, 38, 0.9);
     color: #F9FAFB;
     outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #40E0D0;
 }
 
 .input-group input::placeholder,
@@ -515,6 +577,11 @@ nav ul li a:hover::after {
     color: #111827;
     font-weight: 600;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#contact-form button:hover {
+    transform: translateY(-2px);
 }
 
 /* Footer */
@@ -536,9 +603,14 @@ footer .social-links a {
     color: #E5E7EB;
     text-decoration: none;
     font-size: 0.9rem;
+    transition: color 0.3s;
 }
 
-/* Simple Fade-in animation for some sections */
+footer .social-links a:hover {
+    color: #40E0D0;
+}
+
+/* Simple Fade-in animation */
 .animate-fadeIn {
     animation: fadeIn 0.8s ease-out forwards;
 }
@@ -561,5 +633,8 @@ footer .social-links a {
     }
     .hero h1 {
         font-size: 2.2rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
