@@ -1,10 +1,9 @@
-// Modal setup - these elements handle the 'folder window' popups when you click Education, Skills, etc.
+// --- Configuration ---
 const modal = document.getElementById('window-modal');
 const modalTitle = document.getElementById('window-title');
 const modalContent = document.getElementById('window-content');
 
-// All projects that appear on the site - add new ones here and the cards auto-generate below
-// Each project is self-contained: title, description, tech stack, and link(s)
+// Array of project data - matching CV information
 const projects = [
     {
         title: "Personal Portfolio",
@@ -29,14 +28,13 @@ const projects = [
     }
 ];
 
-// Dynamically generate project cards from the array above
-// This pattern keeps the HTML clean and the content in one place
+// Get the container and populate projects
 const container = document.getElementById("project-container");
 
 projects.forEach(project => {
     let linkHTML = "";
     
-    // Handle different link types - single link or multiple (Figma + case study)
+    // Check project links and generate HTML
     if (typeof project.link === "string") {
         // Single link
         if (project.link === "#") {
@@ -45,7 +43,7 @@ projects.forEach(project => {
             linkHTML = `<a href="${project.link}" target="_blank" class="btn-small">Check it out</a>`;
         }
     } else if (project.link && typeof project.link === "object") {
-        // When a project has multiple ways to explore it (like viewing the prototype OR reading the case study)
+        // Multiple links (for SynchroTrack)
         if (project.link.figma) {
             linkHTML += `<a href="${project.link.figma}" target="_blank" class="btn-small">Try the Prototype</a>`;
         }
@@ -70,8 +68,7 @@ projects.forEach(project => {
 });
 
 
-// Content for the 'folder windows' - Education, Experience, Skills, and Random Facts
-// Each one tells part of my story with genuine voice (not just dry credentials)
+// Data for the modal windows - now with more personality
 const folderData = {
     education: {
         title: "education 🎓",
@@ -223,82 +220,134 @@ const folderData = {
     },
     // Updated case study with more authentic voice
     synchrotrack_case_study: {
-        title: "SynchroTrack Case Study 📱",
+        title: "SynchroTrack Case Study",
         content: `
             <div class="case-study-content">
-                <h1 class="text-3xl font-bold mb-4">SynchroTrack: My First Real UX Project</h1>
+                <h1 class="text-3xl font-bold mb-2">SynchroTrack</h1>
+                <p class="text-lg text-gray-300 mb-6">An Adaptive Focus Companion for Different Mental States</p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Project Overview</h2>
+                <p class="mb-4 text-gray-300">
+                    SynchroTrack is a conceptual mobile application designed to help users enter and maintain 
+                    different focus states through adaptive audio-visual feedback. This project demonstrates 
+                    my ability to apply UX principles from my Medieninformatik studies at LMU Munich to create 
+                    a cohesive, user-centered design solution.
+                </p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Design Challenge</h2>
+                <p class="mb-4 text-gray-300">
+                    How might we design a focus application that adapts to users' varying mental states 
+                    without adding cognitive overhead or decision fatigue?
+                </p>
                 
-                <p class="mb-4 text-gray-300 italic">
-                    Spoiler: I made a lot of rookie mistakes, but learned even more.
-                </p>
-
-                <h2 class="text-xl font-semibold mt-6 mb-2">🤔 The Problem (aka my personal frustration)</h2>
-                <p class="mb-4 text-gray-300">
-                    Ever tried using a "productivity" app when your brain is already fried? Yeah, me too. 
-                    Most focus apps assume you're a productivity machine who just needs more features, 
-                    more trackers, more guilt-inducing statistics.
-                </p>
-                <p class="mb-4 text-gray-300">
-                    <strong>My hypothesis:</strong> What if a focus app could be... less? Less choices, 
-                    less cognitive load, less judgment. Just enough to help you start.
-                </p>
-
-                <h2 class="text-xl font-semibold mt-6 mb-2">🎯 Design Approach</h2>
-                <p class="mb-4 text-gray-300">
-                    I went full minimalist (maybe too minimal at first). The entire app flow is basically:
-                </p>
-                <ol class="list-decimal list-outside ml-5 space-y-2 text-gray-300 mb-4">
-                    <li>Open app (no onboarding novels)</li>
-                    <li>Quick login (because we have to)</li>
-                    <li>One question: "How's your brain today?"</li>
-                    <li>Pick your vibe: Calm, Medium, or High energy</li>
-                    <li>Start focusing (that's it!)</li>
-                </ol>
-
-                <h2 class="text-xl font-semibold mt-6 mb-2">🎨 Design Decisions I'm Proud Of</h2>
-                <ul class="list-disc list-outside ml-5 space-y-3 text-gray-300">
-                    <li>
-                        <strong>Three modes only</strong> – Because when you're overwhelmed, 
-                        even choosing between 5 options feels like too much
-                    </li>
-                    <li>
-                        <strong>No timers showing during setup</strong> – You decide to start 
-                        when YOU'RE ready, not when the app thinks you should
-                    </li>
-                    <li>
-                        <strong>Gradients that shift with your state</strong> – Visual feedback 
-                        without numbers or percentages judging your "productivity score"
-                    </li>
-                    <li>
-                        <strong>Zero notifications</strong> – If you need the app, you'll open it. 
-                        We're not Instagram.
-                    </li>
+                <h2 class="text-xl font-semibold mt-6 mb-2">Target Users</h2>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li>Students and knowledge workers who struggle with context-switching</li>
+                    <li>Individuals with ADHD or attention regulation challenges</li>
+                    <li>Anyone seeking a less prescriptive approach to productivity</li>
                 </ul>
 
-                <h2 class="text-xl font-semibold mt-6 mb-2">😅 What I'd Change (learning moments)</h2>
-                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300">
-                    <li>The glassmorphism might be too trendy – will it age well?</li>
-                    <li>Need better accessibility – contrast ratios aren't great</li>
-                    <li>Should test with actual ADHD/anxious users (not just myself)</li>
-                    <li>Maybe add ONE customization option for session length?</li>
+                <h2 class="text-xl font-semibold mt-6 mb-2">Design Process</h2>
+                
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">1. Research & Analysis</h3>
+                <p class="mb-4 text-gray-300">
+                    I analyzed existing productivity apps and identified common pain points:
+                </p>
+                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
+                    <li>Feature overload creating paradox of choice</li>
+                    <li>One-size-fits-all approaches ignoring mental state variations</li>
+                    <li>Aggressive notification patterns increasing stress</li>
+                    <li>Complex onboarding flows deterring regular use</li>
                 </ul>
 
-                <h2 class="text-xl font-semibold mt-6 mb-2">💡 What I Learned</h2>
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">2. Information Architecture</h3>
                 <p class="mb-4 text-gray-300">
-                    First real project syndrome is real – I wanted to add every cool Figma trick I knew. 
-                    But constraint is actually freeing. By limiting myself to one core flow and three states, 
-                    I could focus on making each screen actually good instead of just... there.
+                    I designed a linear, minimal flow with only five core screens:
                 </p>
+                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
+                    <li><strong>Welcome:</strong> Single CTA entry point</li>
+                    <li><strong>Authentication:</strong> Streamlined login/signup</li>
+                    <li><strong>Calibration:</strong> Quick state assessment</li>
+                    <li><strong>Session Selection:</strong> Three distinct modes</li>
+                    <li><strong>Active Session:</strong> Immersive focus environment</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">3. Visual Design System</h3>
                 <p class="mb-4 text-gray-300">
-                    Also: components in Figma will save your life. Make them early. Name them properly. 
-                    Future you will thank present you.
+                    The visual language reinforces the app's adaptive nature:
                 </p>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li><strong>Color Psychology:</strong> Deep blues for calm, graduated intensity for higher energy states</li>
+                    <li><strong>Typography:</strong> Single sans-serif family with clear hierarchy (sizes: 32pt, 24pt, 16pt, 14pt)</li>
+                    <li><strong>Spatial Design:</strong> Generous white space reducing visual noise</li>
+                    <li><strong>Glassmorphism:</strong> Subtle depth without distraction</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Key Design Decisions</h2>
+                
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">Three-State Model</h3>
+                <p class="mb-4 text-gray-300">
+                    Based on cognitive load theory, I limited choices to three distinct states:
+                </p>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li><strong>Calm Focus (Low Intensity):</strong> For reading, reflection, or light tasks</li>
+                    <li><strong>Medium Drive (Balanced):</strong> For standard work sessions</li>
+                    <li><strong>High Energy (Peak Performance):</strong> For demanding cognitive tasks</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">Interaction Patterns</h3>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li>Single primary action per screen following Fitts's Law</li>
+                    <li>Progressive disclosure preventing information overload</li>
+                    <li>Consistent touch targets (minimum 44x44pt)</li>
+                    <li>Predictable navigation with clear back affordances</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Prototyping & Implementation</h2>
+                <p class="mb-4 text-gray-300">
+                    Built in Figma using component-based design:
+                </p>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li>Reusable component library ensuring consistency</li>
+                    <li>Auto-layout for responsive behavior</li>
+                    <li>Interactive prototype with realistic transitions</li>
+                    <li>Organized layer structure for developer handoff</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Measuring Success (Proposed Metrics)</h2>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li>Time to first focus session under 30 seconds</li>
+                    <li>Daily active usage without reminder notifications</li>
+                    <li>Session completion rate above 80%</li>
+                    <li>User-reported stress reduction</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Skills Demonstrated</h2>
+                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
+                    <li>User-centered design thinking</li>
+                    <li>Information architecture and user flows</li>
+                    <li>Visual design and typography</li>
+                    <li>Component-based design systems</li>
+                    <li>Interaction design principles</li>
+                    <li>Prototyping and design documentation</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Next Steps</h2>
+                <p class="mb-4 text-gray-300">
+                    Given more resources, I would conduct:
+                </p>
+                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
+                    <li>User interviews with target demographics</li>
+                    <li>A/B testing on onboarding flow variations</li>
+                    <li>Accessibility audit and improvements</li>
+                    <li>Usability testing with 5-8 participants</li>
+                </ul>
 
                 <p class="text-center mt-8">
                     <a href="https://www.figma.com/proto/9iO9cm1sCzd4C0CzhLUqfo/SynchroTrack-Prototype?node-id=0-1&t=sD2ZWLPAArMmL3rS-1" 
                        target="_blank" 
                        class="btn-small btn-case-study">
-                        See it in Action →
+                        View Interactive Prototype
                     </a>
                 </p>
             </div>
@@ -306,8 +355,7 @@ const folderData = {
     }
 };
 
-// Window functionality - open/close the modal popups
-// Simple but effective: classList.add/remove is all you need for showing/hiding
+// Window functionality remains the same
 function openWindow(key) {
     if (folderData[key]) {
         modalTitle.innerText = folderData[key].title;
@@ -320,13 +368,11 @@ function closeWindow() {
     modal.classList.remove("open");
 }
 
-// Click outside the modal to close it - feels more natural than having to hunt for an X
 window.onclick = function (e) {
     if (e.target == modal) closeWindow();
 };
 
-// Fade-in animation on page load - makes the site feel less static
-// querySelectorAll finds all the main content blocks and adds the animation class
+// Initial Fade-In Animation
 const hiddenElements = document.querySelectorAll(
     ".hero, .about, .projects-section h2, .contact-section, .project-card"
 );

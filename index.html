@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elifnaz Çaylı | UX & Medieninformatik</title>
-    <!-- Inter font with multiple weights for flexible typography -->
+    
+    <!-- Google Fonts preconnect for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter font with multiple weights for flexible typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Icons for the folder UI and social links -->
+    <!-- Font Awesome CDN for folder icons and social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Sticky header with navigation - stays at top while scrolling -->
     <header>
         <nav>
             <h2>Elifnaz Çaylı</h2>
@@ -28,6 +31,7 @@
         </nav>
     </header>
 
+    <!-- Hero Section - first thing visitors see, sets the tone -->
     <section id="home" class="hero">
         <div class="hero-content">
             <p class="eyebrow">Medieninformatik Student @ LMU</p>
@@ -41,12 +45,13 @@
                 When I'm not prototyping in Figma or debugging Java, you'll find me at Model UN debates, 
                 contributing to Sapere Aude magazine, or helping Turkish students navigate Munich life.
             </p>
+            <!-- CTA button with smooth scroll to projects -->
             <button onclick="document.getElementById('projects').scrollIntoView()">see what I've built →</button>
         </div>
     </section>
 
 
-    <!-- FEATURED PROJECT: SYNCHROTRACK -->
+    <!-- FEATURED PROJECT: SYNCHROTRACK - my main portfolio piece gets special treatment -->
     <section id="synchrotrack" class="featured-project">
         <div class="featured-text">
             <h2>SynchroTrack</h2>
@@ -69,12 +74,13 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION - folder icons that open modal windows with details -->
     <section id="about" class="about">
         <h2>the quick rundown</h2>
         <p class="mb-10 max-w-2xl mx-auto text-lg text-gray-300">
             Click around to learn more about my slightly chaotic academic journey.
         </p>
+        <!-- Grid of clickable folder icons - each opens a modal with detailed content -->
         <div class="about-grid">
             <div class="folder-icon" onclick="openWindow('education')">
                 <span class="icon"><i class="fas fa-graduation-cap"></i></span>
@@ -98,7 +104,8 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- PROJECTS SECTION - dynamically populated by JavaScript -->
+    <!-- Project cards are generated from the projects array in script.js -->
     <section id="projects" class="projects-section">
         <h2>stuff I've made</h2>
         <p class="projects-intro">From biotech labs to design prototypes – it's been a journey.</p>
@@ -106,6 +113,7 @@
     </section>
 
 
+    <!-- CONTACT SECTION - simple form for getting in touch -->
     <section id="contact" class="contact-section">
         <h2>let's chat!</h2>
         <p class="contact-intro">Got a project idea? Want to discuss UX over Turkish tea? Just say hi!</p>
@@ -125,6 +133,7 @@
     </section>
 
 
+    <!-- FOOTER - social links and signature line -->
     <footer>
         <div class="social-links">
             <a href="https://github.com/ecayli" target="_blank">GitHub</a>
@@ -135,17 +144,19 @@
         <p>Made with coffee and determination in Munich 🥨</p>
     </footer>
 
-    <!-- Modal Window for folder content -->
+    <!-- Modal Window - popup container for folder content -->
+    <!-- Hidden by default, shown when a folder icon is clicked -->
     <div id="window-modal" class="modal">
         <div class="modal-content glass">
             <span class="modal-close" onclick="closeWindow()">&times;</span>
             <h2 id="window-title">window</h2>
             <div id="window-content" class="window-body">
-                <!-- dynamic content -->
+                <!-- Content gets injected here by JavaScript -->
             </div>
         </div>
     </div>
 
+    <!-- JavaScript handles modal functionality and dynamic project card generation -->
     <script src="script.js"></script>
 </body>
 </html>
