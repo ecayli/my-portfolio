@@ -2,11 +2,7 @@
 
 A personal portfolio showcasing my journey from pure Computer Science to UX-focused Medieninformatik. This isn't just a resume—it's a space to communicate personality, education, and design philosophy through a clean, intentional interface.
 
-## 🎯 Philosophy
-
-Everything here has a voice. This portfolio reflects authentic personality and conversational tone rather than corporate formality. It's a creative space designed to show who I am, not just what I've done.
-
-## 🏗️ Architecture
+## Architecture
 
 Built with **vanilla HTML, CSS, and JavaScript**—no frameworks, no build tools, no dependencies except Google Fonts and Font Awesome icons.
 
@@ -20,7 +16,7 @@ Built with **vanilla HTML, CSS, and JavaScript**—no frameworks, no build tools
 - **Folder Windows** - Modal content for About section (Education, Experience, Skills, Random Facts)
 - **Case Studies** - Multi-link support for projects with prototypes and detailed writeups (e.g., SynchroTrack)
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 - **Primary Dark**: `#26263A` (Deep Indigo)
@@ -35,7 +31,7 @@ Built with **vanilla HTML, CSS, and JavaScript**—no frameworks, no build tools
 - Smooth scroll behavior throughout
 - Responsive design with flexible layouts
 
-## ✨ Notable Patterns
+## Notable Patterns
 
 ### Adding a New Project
 1. Add object to `projects` array in `script.js`
@@ -57,7 +53,7 @@ All dynamic content lives in `folderData` object in `script.js`:
 - All colors derived from palette—maintain consistency
 - Test hover/focus states for interactive elements
 
-## 🚀 Getting Started
+## Getting Started
 
 ### View Locally
 Just open `index.html` in your browser—no server needed.
@@ -67,11 +63,11 @@ Just open `index.html` in your browser—no server needed.
 - **Styling**: Edit `style.css` (maintain dark theme + utility class pattern)
 - **Structure**: Edit `index.html` (keep semantic sections)
 
-## 📚 External Dependencies
+## External Dependencies
 - **Font**: [Inter](https://fonts.google.com/specimen/Inter) from Google Fonts (weights: 400, 500, 600, 700, 800)
 - **Icons**: [Font Awesome 6.5.1](https://fontawesome.com/) via CDN
 
-## 🎤 Voice & Tone
+##  Voice & Tone
 
 This portfolio is written in a conversational, self-aware voice. Examples:
 - "Remember when every productivity app made you feel MORE stressed?"
@@ -80,9 +76,6 @@ This portfolio is written in a conversational, self-aware voice. Examples:
 
 **When contributing**: Preserve this authenticity. Avoid corporate language, include personal context, use humor wisely, and explain the "why" behind decisions.
 
-## 📖 AI Agent Instructions
-
-See `.github/copilot-instructions.md` for detailed guidance on working with this codebase (architecture patterns, conventions, workflows).
 
 ## 🔗 Links
 - **GitHub**: [ecayli](https://github.com/ecayli)
@@ -91,7 +84,5 @@ See `.github/copilot-instructions.md` for detailed guidance on working with this
 - **Email**: elifnazcayli@gmail.com
 
 ---
-
-**Made with coffee and determination in Munich 🥨**
 
 Last updated: December 2025
