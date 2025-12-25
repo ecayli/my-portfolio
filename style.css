@@ -1,32 +1,28 @@
-/* Base styles - clean slate for consistent rendering across browsers */
+/* Global Styles Reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Makes sizing so much easier to reason about */
-    font-family: 'Inter', sans-serif; /* Google Font - clean, modern, readable */
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Smooth scrolling for when users click nav links - feels more polished */
 html {
     scroll-behavior: smooth;
 }
 
-/* --- COLOR PALETTE (carefully chosen for dark theme + readability) --- */
-/* Primary Dark: #26263A (Deep Indigo) - for backgrounds & depth */
-/* Secondary Light: #BBBFCF (Pale Blue/Gray) - for secondary text, doesn't strain eyes */
-/* Accent Cyan/Turquoise: #40E0D0 - for highlights & gradient pops */
-/* Warning/Secondary Accent: #FFC107 (Amber) - creates nice contrast in gradients */
+/* --- COLOR PALETTE --- */
+/* Primary Dark: #26263A (Deep Indigo) */
+/* Secondary Light: #BBBFCF (Pale Blue/Gray) */
+/* Accent Cyan/Turquoise: #40E0D0 */
 
-/* Dark mode gradient background - no harsh blacks here, just deep purples & navy */
-/* Radial gradient creates depth and visual interest without being distracting */
+/* Background and Body */
 body {
     background: radial-gradient(circle at top left, #42446B 0, #1A1A2E 35%, #111122 100%);
-    color: #F5F5FF; /* Off-white so it's not too harsh on dark background */
-    min-height: 100vh; /* Ensures footer stays at bottom even on short pages */
+    color: #F5F5FF;
+    min-height: 100vh;
 }
 
-/* Reusable utility classes - inspired by Tailwind but hand-rolled to stay vanilla */
-/* This keeps the HTML readable and CSS maintainable without a build step */
+/* Reusable utility classes */
 .text-white { color: #F5F5FF; }
 .text-gray-300 { color: #CBD2F0; }
 .text-gray-400 { color: #9BA3C7; }
@@ -63,18 +59,17 @@ body {
 .items-start { align-items: flex-start; }
 .flex { display: flex; }
 
-/* Sticky header with glassmorphic effect - stays accessible while scrolling */
-/* backdrop-filter gives that frosted glass look (only works in modern browsers) */
+/* Header */
 header {
     padding: 20px 40px;
     display: flex;
     justify-content: center;
     position: sticky;
     top: 0;
-    z-index: 1000; /* High enough to stay above everything else */
-    backdrop-filter: blur(18px); /* The "glass" effect - blurs content behind */
+    z-index: 1000;
+    backdrop-filter: blur(18px);
     background: linear-gradient(to bottom, rgba(10, 10, 20, 0.9), rgba(10,10,20,0.6));
-    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 nav {
@@ -98,28 +93,25 @@ nav ul {
     gap: 30px;
 }
 
-/* Nav links with gradient underline hover effect - subtle but polished */
-/* Using ::after pseudo-element creates the animated underline */
 nav ul li a {
     text-decoration: none;
     color: #E0E4FF;
     font-size: 0.9rem;
-    letter-spacing: 0.08em; /* Adds breathing room between letters */
+    letter-spacing: 0.08em;
     opacity: 0.8;
-    position: relative; /* Needed for absolute positioning of ::after */
+    position: relative;
     padding-bottom: 2px;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* The magic underline - starts at 0 width and expands on hover */
 nav ul li a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     height: 2px;
-    width: 0; /* Hidden by default */
-    background: linear-gradient(90deg, #40E0D0, #FFC107); /* Gradient matches accent colors */
+    width: 0;
+    background: linear-gradient(90deg, #40E0D0, #FFC107);
     border-radius: 999px;
     transition: width 0.2s ease;
 }
@@ -133,12 +125,12 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Hero Section - the first impression, so it has to hit right */
+/* Hero Section */
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6rem 2rem 4rem; /* Extra padding on top for breathing room */
+    padding: 6rem 2rem 4rem;
 }
 
 .hero-content {
@@ -146,10 +138,9 @@ nav ul li a:hover::after {
     text-align: left;
 }
 
-/* Eyebrow text - sets context before the big headline */
 .hero .eyebrow {
     text-transform: uppercase;
-    letter-spacing: 0.2em; /* Wide letter spacing for that designer look */
+    letter-spacing: 0.2em;
     font-size: 0.75rem;
     color: #BBBFCF;
     margin-bottom: 1rem;
@@ -161,11 +152,10 @@ nav ul li a:hover::after {
     margin-bottom: 1rem;
 }
 
-/* Gradient text effect on my name - classic but effective */
 .hero h1 span {
     background: linear-gradient(90deg, #40E0D0, #FFC107);
-    -webkit-background-clip: text; /* Clips background to text shape */
-    -webkit-text-fill-color: transparent; /* Makes text transparent to show gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -184,30 +174,28 @@ nav ul li a:hover::after {
     color: #CBD2F0;
 }
 
-/* CTA button - glassmorphic style with a satisfying hover effect */
 .hero button {
     margin-top: 1.8rem;
     padding: 0.9rem 1.9rem;
-    border-radius: 999px; /* Fully rounded edges */
+    border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: radial-gradient(circle at top left, rgba(255,255,255,0.28), rgba(255,255,255,0.02));
-    color: #030314; /* Dark text on light button */
+    color: #030314;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     box-shadow:
-        0 15px 40px rgba(0,0,0,0.55), /* Deep shadow for depth */
-        0 0 0 1px rgba(255,255,255,0.12); /* Subtle outer glow */
+        0 15px 40px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(255,255,255,0.12);
     transition: background 0.3s, transform 0.3s;
 }
 
 .hero button:hover {
-    background: #FFD740; /* Solid bright yellow on hover - unmistakable */
-    transform: translateY(-2px); /* Lift effect */
+    background: #FFD740;
+    transform: translateY(-2px);
 }
 
-/* Featured Project: SynchroTrack - my main portfolio piece gets special treatment */
-/* Two-column layout that stacks on mobile */
+/* Featured Project: SynchroTrack */
 .featured-project {
     padding: 5rem 2rem;
     max-width: 1100px;
@@ -239,9 +227,8 @@ nav ul li a:hover::after {
     margin-bottom: 18px;
 }
 
-/* Custom styled list with arrow bullets instead of standard dots */
 .featured-points {
-    list-style: none; /* Remove default bullets */
+    list-style: none;
     padding-left: 0;
     display: flex;
     flex-direction: column;
@@ -250,10 +237,9 @@ nav ul li a:hover::after {
     color: #D0D4E8;
 }
 
-/* The arrow before each point - adds personality */
 .featured-points li::before {
     content: "→";
-    color: #40E0D0; /* Accent color makes arrows pop */
+    color: #40E0D0;
     margin-right: 8px;
 }
 
@@ -263,18 +249,16 @@ nav ul li a:hover::after {
     align-items: center;
 }
 
-/* Mockup image styling - shadow and border make it feel like it's floating */
 .mockup-image {
     width: 100%;
     max-width: 700px;
-    border-radius: 30px; /* Smooth corners */
+    border-radius: 30px;
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.55), /* Deep shadow creates depth */
-        0 0 0 1px rgba(255, 255, 255, 0.18); /* Subtle rim light effect */
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.18);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile responsive - stack layout vertically and put image first */
 @media (max-width: 900px) {
     .featured-project {
         grid-template-columns: 1fr;
@@ -282,13 +266,12 @@ nav ul li a:hover::after {
     }
 
     .featured-mockups {
-        order: -1; /* Move mockup above text on mobile */
+        order: -1;
         margin-bottom: 1.5rem;
     }
 }
 
-/* About Section - where the folder icons live */
-/* Grid auto-adjusts based on screen size */
+/* About Section */
 .about {
     padding: 6rem 2rem;
     max-width: 1000px;
@@ -308,15 +291,13 @@ nav ul li a:hover::after {
 
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 25px;
     margin-top: 2rem;
 }
 
-/* Folder icons - clickable cards that open modal windows */
-/* Glass effect with hover animation */
 .folder-icon {
-    background: rgba(255, 255, 255, 0.06); /* Subtle transparency */
+    background: rgba(255, 255, 255, 0.06);
     border-radius: 20px;
     padding: 18px 18px 14px;
     text-align: left;
@@ -331,7 +312,6 @@ nav ul li a:hover::after {
     gap: 12px;
 }
 
-/* Icon container with gradient background */
 .folder-icon .icon {
     width: 36px;
     height: 36px;
@@ -340,7 +320,7 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFC107; /* Amber color for all icons */
+    color: #FFC107;
 }
 
 .folder-icon span:last-child {
@@ -350,17 +330,15 @@ nav ul li a:hover::after {
     font-size: 0.78rem;
 }
 
-/* Hover effect - lift card and brighten border */
 .folder-icon:hover {
-    transform: translateY(-3px); /* Lift up slightly */
+    transform: translateY(-3px);
     box-shadow:
-        0 24px 60px rgba(0,0,0,0.65), /* Deeper shadow when lifted */
+        0 24px 60px rgba(0,0,0,0.65),
         0 0 0 1px rgba(255,255,255,0.18);
-    border-color: rgba(255,255,255,0.35); /* Brighter border */
+    border-color: rgba(255,255,255,0.35);
 }
 
-/* Projects Section - where all project cards live */
-/* Clean grid layout that adapts to screen size */
+/* Projects Section */
 .projects-section {
     padding: 6rem 2rem;
     text-align: center;
@@ -380,16 +358,15 @@ nav ul li a:hover::after {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-adjusts columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* Project Card - each project gets one of these */
-/* Glass effect with subtle shadows and hover animation */
+/* Project Card */
 .project-card {
-    background: rgba(255, 255, 255, 0.04); /* Very subtle transparency */
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 24px;
     padding: 24px 22px 20px;
     text-align: left;
@@ -403,7 +380,6 @@ nav ul li a:hover::after {
     transition: transform 0.3s ease;
 }
 
-/* Lift card on hover for that interactive feel */
 .project-card:hover {
     transform: translateY(-5px);
 }
@@ -424,20 +400,20 @@ nav ul li a:hover::after {
     color: #A5ACD8;
 }
 
-/* Link Group - handles multiple buttons side-by-side (like prototype + case study) */
+/* Link Group for multiple buttons */
 .project-links-group {
     display: flex;
     gap: 10px; 
-    flex-wrap: wrap; /* Wrap to next line on narrow screens */
-    margin-top: auto; /* Push to bottom of card */
+    flex-wrap: wrap; 
+    margin-top: auto;
 }
 
-/* Button styles - small, rounded, glassmorphic */
+/* Button style adjustments for small buttons */
 .btn-small {
     display: inline-block;
     padding: 10px 20px;
-    border-radius: 50px; /* Fully rounded */
-    background: rgba(255, 255, 255, 0.15); /* Glass effect */
+    border-radius: 50px; 
+    background: rgba(255, 255, 255, 0.15); 
     color: #FFF; 
     text-decoration: none; 
     font-size: 14px; 
@@ -445,71 +421,67 @@ nav ul li a:hover::after {
     transition: background 0.3s, transform 0.2s;
     border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
-    white-space: nowrap; /* Prevents text wrapping inside button */
+    white-space: nowrap; 
 }
 
 .btn-small:hover {
-    background: rgba(255, 255, 255, 0.3); /* Brighten on hover */
-    transform: scale(1.02); /* Slight grow effect */
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
 }
 
-/* Disabled button state - for "coming soon" projects */
+/* Disabled button state */
 .btn-disabled {
     opacity: 0.5;
-    cursor: not-allowed; /* Changes cursor to show it's not clickable */
+    cursor: not-allowed;
 }
 
 .btn-disabled:hover {
-    background: rgba(255, 255, 255, 0.15); /* No change on hover */
+    background: rgba(255, 255, 255, 0.15);
     transform: none;
 }
 
-/* Case Study button - gets special amber color to stand out */
+/* Specific style for the Case Study button */
 .btn-case-study {
     background: #FFC107;
     border-color: #FFC107;
-    color: #1A1A2E; /* Dark text on bright background */
+    color: #1A1A2E;
     font-weight: 700;
 }
 
 .btn-case-study:hover {
-    background: #FFD740; /* Brighter amber on hover */
+    background: #FFD740;
 }
 
-/* Modal Window (Pop-up) - for Education, Skills, and other folder content */
-/* Full-screen overlay with centered content box */
+/* Modal Window (Pop-up) */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed; 
-    z-index: 2000; /* Above everything else */
+    z-index: 2000; 
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
-    overflow: auto; /* Scrollable if content is long */
-    background-color: rgba(2, 6, 23, 0.7); /* Dark transparent backdrop */
+    overflow: auto; 
+    background-color: rgba(2, 6, 23, 0.7); 
 }
 
-/* .open class gets added by JavaScript to show modal */
 .modal.open {
     display: block;
 }
 
-/* The actual modal content box - glassmorphic style */
 .modal-content {
     background: radial-gradient(circle at top left, rgba(255,255,255,0.25), rgba(15,23,42,0.95));
-    margin: 5% auto; /* Centered with top margin */
+    margin: 5% auto; 
     padding: 20px 30px 30px;
     border-radius: 24px; 
-    width: min(800px, 90%); /* Responsive: 800px max, but 90% on small screens */
+    width: min(800px, 90%);
     color: white;
     border: 1px solid rgba(255,255,255,0.16);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.65); /* Deep shadow for depth */
-    max-height: 80vh; /* Don't take up entire screen height */
-    overflow-y: auto; /* Scroll if content overflows */
+    box-shadow: 0 30px 80px rgba(0,0,0,0.65);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-/* Close button (X) - top right corner */
 .modal-close {
     color: #CBD5F5; 
     float: right; 
@@ -522,15 +494,15 @@ nav ul li a:hover::after {
     color: white;
 }
 
-/* Window body - the actual content inside modals */
+/* Window body text */
 .window-body {
     margin-top: 12px;
     font-size: 14px;
     color: #E2E8F0;
-    line-height: 1.7; /* Comfortable reading */
+    line-height: 1.7;
 }
 
-/* Case Study specific styling - for longer-form content */
+/* Case Study Content */
 .case-study-content {
     line-height: 1.8;
 }
@@ -539,12 +511,72 @@ nav ul li a:hover::after {
     margin-bottom: 1rem;
 }
 
-/* Accent color for headings to create visual hierarchy */
 .case-study-content h2 {
-    color: #40E0D0; /* Cyan accent */
+    color: #40E0D0;
 }
 
-/* Contact Section - simple form for reaching out */
+.case-study-content .grid {
+    display: grid;
+}
+
+.case-study-content .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.case-study-content .gap-4 {
+    gap: 1rem;
+}
+
+.case-study-content .bg-gray-800 {
+    background-color: rgba(55, 65, 81, 0.5);
+}
+
+.case-study-content .rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.case-study-content .p-4 {
+    padding: 1rem;
+}
+
+.case-study-content .p-6 {
+    padding: 1.5rem;
+}
+
+.case-study-content .text-2xl {
+    font-size: 1.5rem;
+}
+
+.case-study-content .shadow-lg {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.case-study-content pre {
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+}
+
+.case-study-content .prototype-preview {
+    margin-bottom: 2rem;
+}
+
+.case-study-content .flex-wrap {
+    flex-wrap: wrap;
+}
+
+.case-study-content .space-y-4 > * + * {
+    margin-top: 1rem;
+}
+
+/* Responsive grid for case study */
+@media (max-width: 768px) {
+    .case-study-content .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Section */
 .contact-section {
     padding: 6rem 2rem;
     text-align: center;
@@ -570,48 +602,45 @@ nav ul li a:hover::after {
     margin-bottom: 15px;
 }
 
-/* Input and textarea styling - dark theme with subtle borders */
 .input-group input,
 .input-group textarea {
     width: 100%;
     padding: 12px 14px;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.15); /* Subtle border */
-    background-color: rgba(13, 17, 38, 0.9); /* Dark semi-transparent */
+    border: 1px solid rgba(255,255,255,0.15);
+    background-color: rgba(13, 17, 38, 0.9);
     color: #F9FAFB;
-    outline: none; /* Remove default browser outline */
+    outline: none;
     transition: border-color 0.3s;
 }
 
-/* Accent border on focus - shows active state */
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #40E0D0; /* Cyan accent when typing */
+    border-color: #40E0D0;
 }
 
 .input-group input::placeholder,
 .input-group textarea::placeholder {
-    color: #9CA3AF; /* Lighter gray for placeholder text */
+    color: #9CA3AF;
 }
 
-/* Submit button - gradient background for that extra pop */
 #contact-form button {
     margin-top: 5px;
     padding: 12px 24px;
     border-radius: 999px;
     border: none;
-    background: linear-gradient(90deg, #40E0D0, #FFC107); /* Signature gradient */
-    color: #111827; /* Dark text on bright background */
+    background: linear-gradient(90deg, #40E0D0, #FFC107);
+    color: #111827;
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.3s;
 }
 
 #contact-form button:hover {
-    transform: translateY(-2px); /* Lift on hover */
+    transform: translateY(-2px);
 }
 
-/* Footer - simple and clean */
+/* Footer */
 footer {
     padding: 20px;
     text-align: center;
@@ -634,41 +663,34 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-    color: #40E0D0; /* Accent color on hover */
+    color: #40E0D0;
 }
 
-/* Simple Fade-in animation - added to elements on page load via JavaScript */
-/* Creates a smooth entrance effect */
+/* Simple Fade-in animation */
 .animate-fadeIn {
     animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(10px); /* Start slightly lower */
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); /* End in normal position */
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive tweaks - mobile-friendly adjustments */
+/* Responsive tweaks */
 @media (max-width: 768px) {
     header {
-        padding: 12px 18px; /* Less padding on mobile */
+        padding: 12px 18px;
     }
     nav ul {
-        gap: 18px; /* Tighter spacing for mobile nav */
+        gap: 18px;
     }
     .hero {
         padding-top: 5rem;
     }
     .hero h1 {
-        font-size: 2.2rem; /* Smaller heading on mobile */
+        font-size: 2.2rem;
     }
     .projects-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-template-columns: 1fr;
     }
 }

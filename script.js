@@ -226,6 +226,22 @@ const folderData = {
                 <h1 class="text-3xl font-bold mb-2">SynchroTrack</h1>
                 <p class="text-lg text-gray-300 mb-6">An Adaptive Focus Companion for Different Mental States</p>
 
+                <div class="prototype-preview mb-6">
+                    <img src="synchrotrack-mockup.png" alt="SynchroTrack screens preview" class="w-full rounded-lg shadow-lg mb-4" />
+                    <div class="flex gap-4 justify-center">
+                        <a href="https://www.figma.com/proto/9iO9cm1sCzd4C0CzhLUqfo/SynchroTrack-Prototype?node-id=0-1&t=sD2ZWLPAArMmL3rS-1" 
+                           target="_blank" 
+                           class="btn-small btn-case-study">
+                            View Figma Prototype
+                        </a>
+                        <a href="https://www.figma.com/file/9iO9cm1sCzd4C0CzhLUqfo/SynchroTrack-Case-Study" 
+                           target="_blank" 
+                           class="btn-small">
+                            View Design Process
+                        </a>
+                    </div>
+                </div>
+
                 <h2 class="text-xl font-semibold mt-6 mb-2">Project Overview</h2>
                 <p class="mb-4 text-gray-300">
                     SynchroTrack is a conceptual mobile application designed to help users enter and maintain 
@@ -240,16 +256,16 @@ const folderData = {
                     without adding cognitive overhead or decision fatigue?
                 </p>
                 
-                <h2 class="text-xl font-semibold mt-6 mb-2">Target Users</h2>
-                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
-                    <li>Students and knowledge workers who struggle with context-switching</li>
-                    <li>Individuals with ADHD or attention regulation challenges</li>
-                    <li>Anyone seeking a less prescriptive approach to productivity</li>
+                <h2 class="text-xl font-semibold mt-6 mb-2">My Role & Timeline</h2>
+                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
+                    <li>Role: UX Designer (Individual Project)</li>
+                    <li>Duration: 4 weeks (ongoing iterations)</li>
+                    <li>Tools: Figma, FigJam, Notion</li>
                 </ul>
 
                 <h2 class="text-xl font-semibold mt-6 mb-2">Design Process</h2>
                 
-                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">1. Research & Analysis</h3>
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">1. Research & Problem Definition</h3>
                 <p class="mb-4 text-gray-300">
                     I analyzed existing productivity apps and identified common pain points:
                 </p>
@@ -260,96 +276,127 @@ const folderData = {
                     <li>Complex onboarding flows deterring regular use</li>
                 </ul>
 
-                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">2. Information Architecture</h3>
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">2. Ideation & Concept Development</h3>
                 <p class="mb-4 text-gray-300">
-                    I designed a linear, minimal flow with only five core screens:
+                    Based on cognitive load theory and principles from my HCI courses, I developed a three-state model:
                 </p>
-                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
-                    <li><strong>Welcome:</strong> Single CTA entry point</li>
-                    <li><strong>Authentication:</strong> Streamlined login/signup</li>
-                    <li><strong>Calibration:</strong> Quick state assessment</li>
-                    <li><strong>Session Selection:</strong> Three distinct modes</li>
-                    <li><strong>Active Session:</strong> Immersive focus environment</li>
-                </ul>
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="text-center p-4 bg-gray-800 rounded-lg">
+                        <div class="text-2xl mb-2">☁️</div>
+                        <h4 class="font-semibold text-gray-100">Calm Focus</h4>
+                        <p class="text-sm text-gray-400">Low intensity for deep work</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-800 rounded-lg">
+                        <div class="text-2xl mb-2">〰️</div>
+                        <h4 class="font-semibold text-gray-100">Medium Drive</h4>
+                        <p class="text-sm text-gray-400">Balanced for steady tasks</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-800 rounded-lg">
+                        <div class="text-2xl mb-2">⚡</div>
+                        <h4 class="font-semibold text-gray-100">High Energy</h4>
+                        <p class="text-sm text-gray-400">Peak performance mode</p>
+                    </div>
+                </div>
 
-                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">3. Visual Design System</h3>
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">3. Information Architecture</h3>
                 <p class="mb-4 text-gray-300">
-                    The visual language reinforces the app's adaptive nature:
+                    I designed a linear, minimal flow with only five core screens to reduce cognitive load:
+                </p>
+                <pre class="bg-gray-800 p-4 rounded-lg text-sm text-gray-300 mb-4">
+App Entry → Welcome → Login → Calibration → Session → Active
+                                    ↓
+                             (Choose State)
+                </pre>
+
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">4. Design System Creation</h3>
+                <p class="mb-4 text-gray-300">
+                    I developed a comprehensive design system in Figma:
                 </p>
                 <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
                     <li><strong>Color Psychology:</strong> Deep blues for calm, graduated intensity for higher energy states</li>
-                    <li><strong>Typography:</strong> Single sans-serif family with clear hierarchy (sizes: 32pt, 24pt, 16pt, 14pt)</li>
-                    <li><strong>Spatial Design:</strong> Generous white space reducing visual noise</li>
-                    <li><strong>Glassmorphism:</strong> Subtle depth without distraction</li>
+                    <li><strong>Typography:</strong> Inter family with clear hierarchy (32pt → 14pt scale)</li>
+                    <li><strong>Component Library:</strong> Reusable buttons, inputs, cards with multiple states</li>
+                    <li><strong>8pt Grid System:</strong> Ensuring consistent spacing and alignment</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">5. Prototyping & Interaction Design</h3>
+                <p class="mb-4 text-gray-300">
+                    The Figma prototype includes:
+                </p>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li>Smart animate transitions between screens</li>
+                    <li>Interactive component states (hover, pressed, disabled)</li>
+                    <li>Micro-interactions for enhanced feedback</li>
+                    <li>State-specific visual treatments</li>
                 </ul>
 
                 <h2 class="text-xl font-semibold mt-6 mb-2">Key Design Decisions</h2>
                 
-                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">Three-State Model</h3>
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-100 mb-1">Limited Choice Architecture</h4>
+                        <p class="text-gray-300 text-sm">Only three states to prevent decision paralysis while maintaining user agency</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-100 mb-1">Progressive Disclosure</h4>
+                        <p class="text-gray-300 text-sm">Information revealed only when needed, reducing cognitive load</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-100 mb-1">Ambient Feedback</h4>
+                        <p class="text-gray-300 text-sm">Visual gradients and colors provide non-intrusive state awareness</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-100 mb-1">Accessibility First</h4>
+                        <p class="text-gray-300 text-sm">44pt touch targets, proper contrast ratios, clear visual hierarchy</p>
+                    </div>
+                </div>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Figma Prototype Features</h2>
+                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
+                    <li>7 fully designed screens with consistent design system</li>
+                    <li>Interactive prototype with realistic user flows</li>
+                    <li>Component documentation and design specs</li>
+                    <li>Process documentation showing design evolution</li>
+                    <li>Accessibility annotations and developer handoff notes</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">Results & Learnings</h2>
                 <p class="mb-4 text-gray-300">
-                    Based on cognitive load theory, I limited choices to three distinct states:
+                    This project taught me:
                 </p>
                 <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
-                    <li><strong>Calm Focus (Low Intensity):</strong> For reading, reflection, or light tasks</li>
-                    <li><strong>Medium Drive (Balanced):</strong> For standard work sessions</li>
-                    <li><strong>High Energy (Peak Performance):</strong> For demanding cognitive tasks</li>
-                </ul>
-
-                <h3 class="text-lg font-semibold mt-4 mb-2 text-gray-100">Interaction Patterns</h3>
-                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
-                    <li>Single primary action per screen following Fitts's Law</li>
-                    <li>Progressive disclosure preventing information overload</li>
-                    <li>Consistent touch targets (minimum 44x44pt)</li>
-                    <li>Predictable navigation with clear back affordances</li>
-                </ul>
-
-                <h2 class="text-xl font-semibold mt-6 mb-2">Prototyping & Implementation</h2>
-                <p class="mb-4 text-gray-300">
-                    Built in Figma using component-based design:
-                </p>
-                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
-                    <li>Reusable component library ensuring consistency</li>
-                    <li>Auto-layout for responsive behavior</li>
-                    <li>Interactive prototype with realistic transitions</li>
-                    <li>Organized layer structure for developer handoff</li>
-                </ul>
-
-                <h2 class="text-xl font-semibold mt-6 mb-2">Measuring Success (Proposed Metrics)</h2>
-                <ul class="list-disc list-outside ml-5 space-y-2 text-gray-300 mb-4">
-                    <li>Time to first focus session under 30 seconds</li>
-                    <li>Daily active usage without reminder notifications</li>
-                    <li>Session completion rate above 80%</li>
-                    <li>User-reported stress reduction</li>
-                </ul>
-
-                <h2 class="text-xl font-semibold mt-6 mb-2">Skills Demonstrated</h2>
-                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
-                    <li>User-centered design thinking</li>
-                    <li>Information architecture and user flows</li>
-                    <li>Visual design and typography</li>
-                    <li>Component-based design systems</li>
-                    <li>Interaction design principles</li>
-                    <li>Prototyping and design documentation</li>
+                    <li>The importance of constraint in reducing cognitive load</li>
+                    <li>How to create and maintain a consistent design system</li>
+                    <li>The value of documenting design decisions</li>
+                    <li>How to balance aesthetics with usability</li>
                 </ul>
 
                 <h2 class="text-xl font-semibold mt-6 mb-2">Next Steps</h2>
                 <p class="mb-4 text-gray-300">
-                    Given more resources, I would conduct:
+                    With additional resources, I would:
                 </p>
                 <ul class="list-disc list-outside ml-5 space-y-1 text-gray-300 mb-4">
-                    <li>User interviews with target demographics</li>
-                    <li>A/B testing on onboarding flow variations</li>
-                    <li>Accessibility audit and improvements</li>
-                    <li>Usability testing with 5-8 participants</li>
+                    <li>Conduct user research with 5-8 target users</li>
+                    <li>Run usability tests on the prototype</li>
+                    <li>Iterate based on feedback</li>
+                    <li>Develop metrics for measuring success</li>
                 </ul>
 
-                <p class="text-center mt-8">
-                    <a href="https://www.figma.com/proto/9iO9cm1sCzd4C0CzhLUqfo/SynchroTrack-Prototype?node-id=0-1&t=sD2ZWLPAArMmL3rS-1" 
-                       target="_blank" 
-                       class="btn-small btn-case-study">
-                        View Interactive Prototype
-                    </a>
-                </p>
+                <div class="text-center mt-8 p-6 bg-gray-800 rounded-lg">
+                    <p class="text-gray-300 mb-4">Want to see the full design process and interactive prototype?</p>
+                    <div class="flex gap-4 justify-center flex-wrap">
+                        <a href="https://www.figma.com/proto/9iO9cm1sCzd4C0CzhLUqfo/SynchroTrack-Prototype?node-id=0-1&t=sD2ZWLPAArMmL3rS-1" 
+                           target="_blank" 
+                           class="btn-small btn-case-study">
+                            Try the Prototype
+                        </a>
+                        <a href="https://www.figma.com/file/9iO9cm1sCzd4C0CzhLUqfo/SynchroTrack-Case-Study" 
+                           target="_blank" 
+                           class="btn-small">
+                            View Figma File
+                        </a>
+                    </div>
+                </div>
             </div>
         `
     }
